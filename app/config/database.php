@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'mysql_dev',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -52,12 +52,13 @@ return array(
 			'prefix'   => '',
 		),
 
-		'mysql' => array(
+		'mysql_dev' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'database',
+      'port'      => '8889',
+			'database'  => 'golf_l4',
 			'username'  => 'root',
-			'password'  => '',
+			'password'  => 'root',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
@@ -96,7 +97,7 @@ return array(
 	|
 	*/
 
-	'migrations' => 'migrations',
+	'migrations' => 'laravel_migrations',
 
 	/*
 	|--------------------------------------------------------------------------
