@@ -20,6 +20,7 @@ class AccountController extends BaseController {
   public function getLogout()
   {
     Session::flush();
+    return Redirect::to('/');
   }
 
   /**
