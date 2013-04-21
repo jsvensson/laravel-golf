@@ -13,6 +13,43 @@ class AccountController extends BaseController {
   }
 
   /**
+   * Login page view.
+   *
+   * @return void
+   */
+  public function getLogin()
+  {
+    // Kick to / if already logged in
+    if (Auth::check()) {
+      return Redirect::to('/');
+    }
+
+    return View::make('account.login');
+  }
+
+  /**
+   * Login form POST target.
+   *
+   * @return void
+   */
+  public function postLogin()
+  {
+    $user = Input::only('email', 'password');
+
+    if (Auth::attempt($user)) {
+      // Login success
+      return Redirect::to('/')
+        ->with('flash_notice', 'Inloggning lyckad');
+    }
+    else {
+      // Login failure
+      return Redirect::to('account/login')
+        ->with('flash_error', 'Felaktigt inloggningsförsök.')
+        ->withInput(Input::except('password'));
+    }
+  }
+
+  /**
    * Destroy user session.
    *
    * @return void
