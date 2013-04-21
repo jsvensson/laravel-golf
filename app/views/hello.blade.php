@@ -8,7 +8,7 @@
 @endif
 
 @if(Sentry::check())
-  <p>Inloggad som {{ $user->email }}</p>
+  <p>Inloggad som {{ $user->full_name }}</p>
 @endif
 
   <ul>
@@ -20,6 +20,4 @@
   @endif
 
   </ul>
-
-  <p>Todo: clean up static page views.</p>
 @stop
