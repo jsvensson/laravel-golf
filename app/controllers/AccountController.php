@@ -20,7 +20,7 @@ class AccountController extends BaseController {
   public function getLogin()
   {
     // Kick to / if already logged in
-    if (Auth::check()) {
+    if (Sentry::check()) {
       return Redirect::to('/');
     }
 
@@ -36,7 +36,7 @@ class AccountController extends BaseController {
   {
     $user = Input::only('email', 'password');
 
-    if (Auth::attempt($user)) {
+    if (Sentry::authenticate($user)) {
       // Login success
       return Redirect::to('/')
         ->with('flash_notice', 'Inloggning lyckad');
@@ -56,7 +56,7 @@ class AccountController extends BaseController {
    */
   public function getLogout()
   {
-    Auth::logout();
+    Sentry::logout();
     return Redirect::to('/');
   }
 
@@ -80,7 +80,7 @@ class AccountController extends BaseController {
     $val = Validator::make(
       Input::all(),
       [
-        'email' => 'required|email|unique:Users',
+        'email' => 'required|email|unique:users',
         'first_name' => 'required',
         'last_name' => 'required',
         'password' => 'required|min:6',
@@ -96,22 +96,37 @@ class AccountController extends BaseController {
     }
     else
     {
-      $user = User::create([
-        'email' => Input::get('email'),
-        'password' => Hash::make(Input::get('password')),
-        'role' => 0,
-        'active' => true
+      $newuser = Sentry::getUserProvider()->create([
+        'email' => strtolower(Input::get('email')),
+        'password' => Input::get('password'),
+        'first_name' => Input::get('first_name'),
+        'last_name' => Input::get('last_name'),
       ]);
+
+      // Assign to default group
+      $group = Sentry::getGroupProvider()->findByName('user');
+      $newuser->addGroup($group);
+
+      // Activation doodads
+      $activation = $newuser->getActivationCode();
+      $newuser->attemptActivation($activation);
+
+      // Fetch User model object instead of Sentry object
+      $user_id = Sentry::getUserProvider()
+        ->findByLogin(Input::get('email'))
+        ->id;
+      $user = User::find($user_id);
 
       // Create profile
-      $profile = new Profile([
+      $profile = [
+        'user_id' => $user->id,
         'first_name' => Input::get('first_name'),
         'last_name' => Input::get('last_name')
-      ]);
-      $user->profile()->save($profile);
+      ];
+      $user->profile()->insert($profile);
 
       // Log new user in
-      Auth::loginUsingId($user->id);
+      Sentry::login($newuser);
       return Redirect::to('home/');
     }
   }

@@ -1,7 +1,8 @@
 {
 	"require": {
 		"laravel/framework": "4.0.*",
-		"jonob/html": "1.1.*"
+		"jonob/html": "1.1.*",
+		"cartalyst/sentry": "2.0.*"
 	},
 	"autoload": {
 		"classmap": [

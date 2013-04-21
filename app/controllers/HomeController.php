@@ -17,7 +17,15 @@ class HomeController extends BaseController {
 
 	public function getFrontPage()
 	{
-		return View::make('hello');
+    if (Sentry::check())
+    {
+      $user = User::find(Sentry::getUser()->id);
+    }
+    else {
+      $user = false;
+    }
+		return View::make('hello')
+      ->with('user', $user);
 	}
 
 }

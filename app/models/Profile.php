@@ -7,7 +7,7 @@ class Profile extends Eloquent
      *
      * @var string
      */
-    protected $table = 'UserProfiles';
+    protected $table = 'profiles';
 
     /**
      * The database table used by the model.

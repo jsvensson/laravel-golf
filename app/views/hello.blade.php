@@ -7,13 +7,13 @@
   <div class="flash-notice">{{ Session::get('flash_notice') }}</div>
 @endif
 
-@if(Auth::check())
-  <p>Inloggad som {{ Auth::user()->email }}</p>
+@if(Sentry::check())
+  <p>Inloggad som {{ $user->email }}</p>
 @endif
 
   <ul>
     <li>{{ HTML::link('account/signup', 'Registrera konto') }}</li>
-  @if(Auth::check())
+  @if(Sentry::check())
     <li>{{ HTML::link('account/logout', 'Logga ut') }}</li>
   @else
     <li>{{ HTML::link('account/login', 'Logga in') }}</li>
