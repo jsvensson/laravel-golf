@@ -59,7 +59,7 @@ class AccountController extends BaseController {
     }
     else
     {
-      $user = new User([
+      $user = User::create([
         'email' => Input::get('email'),
         'password' => Hash::make(Input::get('password')),
         'role' => 0,
