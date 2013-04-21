@@ -9,6 +9,9 @@
 // Account controller (signup, authentication)
 Route::controller('account', 'AccountController');
 
+// Player controller (anything User- but not Account-related)
+Route::controller('player', 'PlayerController');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
