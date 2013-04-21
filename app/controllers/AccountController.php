@@ -65,18 +65,17 @@ class AccountController extends BaseController {
         'role' => 0,
         'active' => true
       ]);
-      $user->save;
 
       // Create profile
       $profile = new Profile([
         'first_name' => Input::get('first_name'),
         'last_name' => Input::get('last_name')
       ]);
-      $user->profile()->insert($profile);
+      $user->profile()->save($profile);
 
       // Log new user in
       Auth::loginUsingId($user->id);
-      return Redirect::to('home/' . $user->id);
+      return Redirect::to('home/');
     }
   }
 
