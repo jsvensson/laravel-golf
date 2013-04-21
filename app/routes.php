@@ -10,6 +10,8 @@
 Route::controller('account', 'AccountController');
 
 // Player controller (anything User- but not Account-related)
+Route::get('home', 'PlayerController@getHome');
+Route::get('player/{id}', 'PlayerController@getShow');
 Route::controller('player', 'PlayerController');
 
 /*
