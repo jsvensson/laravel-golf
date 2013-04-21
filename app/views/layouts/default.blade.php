@@ -8,7 +8,7 @@
 
 
 @include('debug.input')
-
+@include('debug.session')
 
 </body>
 </html>
