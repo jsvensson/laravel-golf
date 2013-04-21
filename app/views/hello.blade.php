@@ -12,10 +12,10 @@
 @endif
 
   <ul>
-    <li>{{ HTML::link('account/signup', 'Registrera konto') }}</li>
   @if(Sentry::check())
     <li>{{ HTML::link('account/logout', 'Logga ut') }}</li>
   @else
+    <li>{{ HTML::link('account/signup', 'Registrera konto') }}</li>
     <li>{{ HTML::link('account/login', 'Logga in') }}</li>
   @endif
 
