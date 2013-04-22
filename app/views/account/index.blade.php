@@ -1,3 +1,3 @@
-@extends('layouts.default')
+@extends('layout.default')
 
 Account index view

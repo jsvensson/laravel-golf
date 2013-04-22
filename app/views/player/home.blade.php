@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layout.default')
 
 @section('content')
   <h2>Inloggad användarprofil</h2>
