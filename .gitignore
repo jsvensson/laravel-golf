@@ -1,6 +1,7 @@
-/bootstrap/compiled.php
-/vendor
-composer.phar
-composer.lock
-.DS_Store
 *.sublime-*
+.DS_Store
+/bootstrap/compiled.php
+/public/assets/css/base.css
+/vendor
+composer.lock
+composer.phar
