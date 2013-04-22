@@ -1,14 +1,22 @@
 <html>
 <head>
   <title></title>
+@include('partial.head')
 </head>
 <body>
 
-@yield('content')
+@include('partial.nav')
+
+<div class="container">
+  @yield('content')
+</div>
+
+<div class="container container-debug">
+  @include('debug.input')
+  @include('debug.session')
+</div>
 
 
-@include('debug.input')
-@include('debug.session')
-
+@include('partial.js-footer')
 </body>
 </html>
