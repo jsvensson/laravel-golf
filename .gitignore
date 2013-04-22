@@ -1,7 +1,7 @@
 *.sublime-*
 .DS_Store
 /bootstrap/compiled.php
-/public/assets/css/base.css
+/public/assets/css/screen.css
 /vendor
 composer.lock
 composer.phar
