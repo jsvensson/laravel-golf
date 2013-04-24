@@ -1,7 +1,11 @@
 @extends('layout.default')
 
 @section('content')
-  <h1>Hello World!</h1>
+
+<div class="hero-unit">
+  <h1>Golf</h1>
+  <p>Svinga en klubba, träffa dina vänner!</p>
+</div>
 
 @if(Session::has('flash_notice'))
   <div class="flash-notice">{{ Session::get('flash_notice') }}</div>
