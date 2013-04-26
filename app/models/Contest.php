@@ -23,7 +23,7 @@ class Contest extends Eloquent
   }
 
   /**
-   * Event relationship for the model.
+   * Player relationship for the model.
    *
    * @return object
    */
@@ -32,6 +32,15 @@ class Contest extends Eloquent
     return $this->hasMany('Player');
   }
 
+  /**
+   * Owner relationship for the model.
+   *
+   * @return object
+   */
+  public owner()
+  {
+    return $this->belongsTo('Player');
+  }
 
 }
 
