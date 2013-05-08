@@ -25,6 +25,6 @@ Route::controller('player', 'PlayerController');
 |
 */
 
-Route::get('/', 'HomeController@getFrontPage');
+Route::get('/', 'PageController@getFrontPage');
 
 /* EOF */
