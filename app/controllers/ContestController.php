@@ -10,7 +10,11 @@ class ContestController extends BaseController
    */
   public function getIndex()
   {
+    // TODO: open contests only
+    $contests = Contest::all();
+
     return View::make('contest.index')
+      ->with('contests', $contests)
       ->with('user', $this->user);
   }
 
