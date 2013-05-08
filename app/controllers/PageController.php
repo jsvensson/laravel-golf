@@ -10,15 +10,8 @@ class PageController extends BaseController {
 
 	public function getFrontPage()
 	{
-    if (Sentry::check())
-    {
-      $user = User::find(Sentry::getUser()->id);
-    }
-    else {
-      $user = false;
-    }
 		return View::make('hello')
-      ->with('user', $user);
+      ->with('user', $this->user);
 	}
 
 }
