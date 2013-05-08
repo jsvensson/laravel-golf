@@ -11,10 +11,12 @@
   @yield('content')
 </div>
 
-<div class="container container-debug">
-  @include('debug.input')
-  @include('debug.session')
-</div>
+@if(false)
+  <div class="container container-debug">
+    @include('debug.input')
+    @include('debug.session')
+  </div>
+@endif
 
 
 @include('partial.js-footer')
