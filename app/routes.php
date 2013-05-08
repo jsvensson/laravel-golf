@@ -14,6 +14,9 @@ Route::get('home', 'PlayerController@getHome');
 Route::get('player/{id}', 'PlayerController@getShow');
 Route::controller('player', 'PlayerController');
 
+// Contest controller
+Route::controller('contest', 'ContestController');
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
