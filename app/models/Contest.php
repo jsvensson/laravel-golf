@@ -17,7 +17,7 @@ class Contest extends Eloquent
    *
    * @return object
    */
-  public event()
+  public function event()
   {
     return $this->hasMany('Event');
   }
@@ -27,7 +27,7 @@ class Contest extends Eloquent
    *
    * @return object
    */
-  public player()
+  public function player()
   {
     return $this->hasMany('Player');
   }
@@ -37,7 +37,7 @@ class Contest extends Eloquent
    *
    * @return object
    */
-  public owner()
+  public function owner()
   {
     return $this->belongsTo('Player');
   }
