@@ -1,7 +1,6 @@
 @extends('layout.default')
 
 @section('content')
-
   <h2>Registrera ny användare</h2>
 
   {{ Form::open() }}
@@ -35,5 +34,4 @@
     {{ Form::token() }}
     {{ Form::submit('Registrera konto') }}
   </div>
-
 @stop
