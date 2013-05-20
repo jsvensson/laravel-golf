@@ -1,4 +1,6 @@
 {
+	"name": "jsvensson/golf",
+	"description": "Playing around with Laravel 4",
 	"require": {
 		"laravel/framework": "4.0.*",
 		"jonob/html": "1.1.*",
