@@ -15,9 +15,8 @@ class PlayerController extends BaseController
 
   public function getHome()
   {
-    $user = Auth::user();
-
-    return View::make('player.home');
+    return View::make('player.home')
+      ->with('user', $this->user);
   }
 
   public function getShow($player_id)
