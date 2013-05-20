@@ -34,9 +34,9 @@ class AccountController extends BaseController {
    */
   public function postLogin()
   {
-    $user = Input::only('email', 'password');
+    $attempt = Input::only('email', 'password');
 
-    if (Sentry::authenticate($user)) {
+    if (Sentry::authenticate($attempt)) {
       // Login success
       return Redirect::to('/')
         ->with('flash_notice', 'Inloggning lyckad');
