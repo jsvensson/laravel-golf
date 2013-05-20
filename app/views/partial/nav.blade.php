@@ -11,8 +11,10 @@
             @endif
               <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ url('contest') }}">Öppna tävlingar</a></li>
               <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ url('contest/finished') }}">Avslutade tävlingar</a></li>
+            @if(Sentry::check())
               <li role="presentation" class="divider"></li>
-              <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Skapa tävling</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="{{ url('contest/create') }}">Skapa tävling</a></li>
+            @endif
             </ul>
           </li>
           <li class="dropdown">
