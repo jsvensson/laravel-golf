@@ -37,6 +37,7 @@ En `Contest` är en tävling med ett antal deltagare. Tävlingen har ett regelsy
 
 ### Data
 
+ * En `Player` som skapare/administratör, FK `user.id`
  * Tävlingstyp (slag eller poäng)
 
 
