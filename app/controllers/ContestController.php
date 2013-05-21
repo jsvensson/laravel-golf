@@ -37,11 +37,7 @@ class ContestController extends BaseController
 
   public function postCreate()
   {
-    if(Sentry::check()) {
-      return View::make('contest.create')
-        ->with('user', $this->user);
-    }
-    else {
+    if (!Sentry::check()) {
       return Redirect::to('account/login')
         ->with('flash_error', 'Inloggning krävs.');
     }
