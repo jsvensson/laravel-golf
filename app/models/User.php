@@ -79,4 +79,17 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     return trim($initial_name);
   }
 
+  /*
+   * Helper methods
+   */
+
+  static public function require_auth($return_route = null)
+  {
+    if (!Sentry::check()) {
+      return Redirect::to('account/login')
+        ->with('flash_error', 'Inloggning krävs!')
+        ->with('return_route', $return_route);
+    }
+  }
+
 }
