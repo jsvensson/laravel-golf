@@ -25,22 +25,14 @@ class ContestController extends BaseController
    */
   public function getCreate()
   {
-    if(Sentry::check()) {
-      return View::make('contest.create')
-        ->with('user', $this->user);
-    }
-    else {
-      return Redirect::to('account/login')
-        ->with('flash_error', 'Inloggning krävs.');
-    }
+    User::require_auth();
+    return View::make('contest.create')
+      ->with('user', $this->user);
   }
 
   public function postCreate()
   {
-    if (!Sentry::check()) {
-      return Redirect::to('account/login')
-        ->with('flash_error', 'Inloggning krävs.');
-    }
+    User::require_auth();
 
     $val = Validator::make(
       Input::all(),
