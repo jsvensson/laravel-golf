@@ -8,11 +8,11 @@
   {{ Form::label('name', 'Tävlingens namn') }}
   {{ Form::text('name', false, ['placeholder' => 'Namn']) }} {{ $errors->first('name') }}
 
-  {{ Form::label('date_start', 'Startdatum') }}
-  {{ Form::text('date_start', false, ['placeholder' => '2013-05-27']) }} {{ $errors->first('date_start') }}
+  {{ Form::label('start_date', 'Startdatum') }}
+  {{ Form::text('start_date', false, ['placeholder' => '2013-05-27']) }} {{ $errors->first('start_date') }}
 
-  {{ Form::label('date_end', 'Slutdatum') }}
-  {{ Form::text('date_end', false, ['placeholder' => '2013-05-27']) }} {{ $errors->first('date_end') }}
+  {{ Form::label('end_date', 'Slutdatum') }}
+  {{ Form::text('end_date', false, ['placeholder' => '2013-05-27']) }} {{ $errors->first('end_date') }}
 
   <br>
 

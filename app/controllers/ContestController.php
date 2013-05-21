@@ -50,8 +50,8 @@ class ContestController extends BaseController
       Input::all(),
       [
         'name' => 'required',
-        'date_start' => 'required|date_format:Y-m-d|before:' . Input::get('date_end'),
-        'date_end' => 'required|date_format:Y-m-d|after:' . Input::get('date_start'),
+        'start_date' => 'required|date_format:Y-m-d|before:' . Input::get('end_date'),
+        'end_date' => 'required|date_format:Y-m-d|after:' . Input::get('start_date'),
       ]
     );
 
