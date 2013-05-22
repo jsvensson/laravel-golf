@@ -6,11 +6,11 @@ class Contest extends Eloquent
   public $timestamps = true;
 
   /**
-   * The attributes excluded from the model's JSON form.
+   * The attributes included in the model's JSON form.
    *
    * @var array
    */
-  protected $hidden = [];
+  protected $fillable = ['owner_id', 'name', 'start_date', 'end_date'];
 
   /**
    * Event relationship for the model.
