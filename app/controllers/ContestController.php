@@ -25,15 +25,12 @@ class ContestController extends BaseController
    */
   public function getCreate()
   {
-    User::require_auth();
     return View::make('contest.create')
       ->with('user', $this->user);
   }
 
   public function postCreate()
   {
-    User::require_auth();
-
     $val = Validator::make(
       Input::all(),
       [
