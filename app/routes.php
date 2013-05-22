@@ -6,18 +6,26 @@
 |
 */
 
-// Account controller (signup, authentication)
-Route::controller('account', 'AccountController');
+  /*
+   * Account controller
+   */
+  Route::controller('account', 'AccountController');
 
-// Player controller (anything User- but not Account-related)
-Route::get('home', 'PlayerController@getHome');
-Route::get('player/{id}', 'PlayerController@getShow');
-Route::controller('player', 'PlayerController');
+  /*
+   * Player controller
+   */
+  Route::get('home', 'PlayerController@getHome');
+  Route::get('player/{id}', 'PlayerController@getShow');
+  // Controller catch-all
+  Route::controller('player', 'PlayerController');
 
-// Contest controller
-Route::get('contest/create', ['before' => 'auth', 'uses' => 'ContestController@getCreate']);
-Route::post('contest/create', ['before' => 'auth', 'uses' => 'ContestController@postCreate']);
-Route::controller('contest', 'ContestController');
+  /*
+   * Contest controller
+   */
+  Route::get('contest/create', ['before' => 'auth', 'uses' => 'ContestController@getCreate']);
+  Route::post('contest/create', ['before' => 'auth', 'uses' => 'ContestController@postCreate']);
+  // Controller catch-all
+  Route::controller('contest', 'ContestController');
 
 /*
 |--------------------------------------------------------------------------
