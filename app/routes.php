@@ -9,6 +9,9 @@
   /*
    * Account controller
    */
+  Route::get('account/signup', ['before' => 'guest', 'uses' => 'AccountController@getSignup']);
+  Route::post('account/signup', ['before' => 'guest', 'uses' => 'AccountController@postSignup']);
+  // Controller catch-all
   Route::controller('account', 'AccountController');
 
   /*
