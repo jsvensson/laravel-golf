@@ -15,6 +15,8 @@ Route::get('player/{id}', 'PlayerController@getShow');
 Route::controller('player', 'PlayerController');
 
 // Contest controller
+Route::get('contest/create', ['before' => 'auth', 'uses' => 'ContestController@getCreate']);
+Route::post('contest/create', ['before' => 'auth', 'uses' => 'ContestController@postCreate']);
 Route::controller('contest', 'ContestController');
 
 /*
