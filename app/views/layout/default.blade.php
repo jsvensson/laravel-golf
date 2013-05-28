@@ -1,4 +1,5 @@
-<html>
+<!DOCTYPE html>
+<html lang="sv">
 <head>
   <title></title>
 @include('partial.head')
@@ -17,7 +18,6 @@
     @include('debug.session')
   </div>
 @endif
-
 
 @include('partial.js-footer')
 </body>
