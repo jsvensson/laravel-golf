@@ -49,8 +49,17 @@ class ContestController extends BaseController
       // Validation passed, create contest
       $c = [
         'owner_id' => $this->user->id,
-        'name'     => Input::get('name'),
+        'name' => Input::get('name'),
+        'start_date' => Input::get('start_date'),
+        'end_date' => Input::get('end_date')
       ];
+
+      $contest = new Contest($c);
+
+      $contest->save();
+
+      // TODO: contest view
+      return $contest;
     }
   }
 
