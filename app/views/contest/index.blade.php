@@ -4,6 +4,26 @@
 
   <h2>Aktiva tävlingar</h2>
 
-  <p>Visar endast icke-slutna tävlingar</p>
+  <p>Visar endast icke-slutna tävlingar samt slutna tävlingar man deltar i.</p>
+
+  <table class="table">
+    <tr>
+      <th>Namn</th>
+      <th>Öppnar</th>
+      <th>Stänger</th>
+      <th>Skapare</th>
+      <th>Deltagare</th>
+    </tr>
+@foreach ($contests as $contest)
+    <tr>
+      <td><?= $contest->name ?></td>
+      <td><?= $contest->start_date ?></td>
+      <td><?= $contest->end_date ?></td>
+      <td><a href="{{ url('player/' . $contest->owner->id) }}"><?= $contest->owner->initial_name ?><a></td>
+      <td><?= $contest->players ?></td>
+    </tr>
+@endforeach
+  </table>
+
 
 @stop
