@@ -29,7 +29,7 @@ class Contest extends Eloquent
    */
   public function player()
   {
-    return $this->hasMany('Player');
+    return $this->hasMany('User');
   }
 
   /**
@@ -39,7 +39,7 @@ class Contest extends Eloquent
    */
   public function owner()
   {
-    return $this->belongsTo('Player');
+    return $this->belongsTo('User');
   }
 
 }
