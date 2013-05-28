@@ -99,8 +99,6 @@ class AccountController extends BaseController {
       $newuser = Sentry::getUserProvider()->create([
         'email' => strtolower(Input::get('email')),
         'password' => Input::get('password'),
-        'first_name' => Input::get('first_name'),
-        'last_name' => Input::get('last_name'),
       ]);
 
       // Assign to default group
