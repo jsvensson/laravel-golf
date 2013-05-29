@@ -6,7 +6,7 @@
 
   <p>Visar endast icke-slutna tävlingar samt slutna tävlingar man deltar i.</p>
 
-  <table class="table">
+  <table class="table table-condensed">
     <tr>
       <th>Namn</th>
       <th>Öppnar</th>
@@ -16,7 +16,7 @@
     </tr>
 @foreach ($contests as $contest)
     <tr>
-      <td><?= $contest->name ?></td>
+      <td><a href="{{ url('contest/show/' . $contest->id) }}"><?= $contest->name ?></a></td>
       <td><?= $contest->start_date ?></td>
       <td><?= $contest->end_date ?></td>
       <td><a href="{{ url('player/' . $contest->owner->id) }}"><?= $contest->owner->initial_name ?><a></td>
