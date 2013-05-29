@@ -63,6 +63,14 @@ class ContestController extends BaseController
     }
   }
 
+  public function getShow($contest_id)
+  {
+    $contest = Contest::findOrFail($contest_id);
+    return View::make('contest.show')
+      ->with('contest', $contest)
+      ->with('user', $this->user);
+  }
+
 }
 
 /* EOF */
