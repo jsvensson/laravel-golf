@@ -19,11 +19,6 @@ class AccountController extends BaseController {
    */
   public function getLogin()
   {
-    // Kick to / if already logged in
-    if (Sentry::check()) {
-      return Redirect::to('/');
-    }
-
     return View::make('account.login');
   }
 

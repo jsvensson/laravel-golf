@@ -10,6 +10,7 @@
    * Account controller
    */
   Route::when('account/signup', 'guest');
+  Route::when('account/login', 'guest');
   // Controller catch-all
   Route::controller('account', 'AccountController');
 
