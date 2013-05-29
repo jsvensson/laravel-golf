@@ -9,8 +9,7 @@
   /*
    * Account controller
    */
-  Route::get('account/signup', ['before' => 'guest', 'uses' => 'AccountController@getSignup']);
-  Route::post('account/signup', ['before' => 'guest', 'uses' => 'AccountController@postSignup']);
+  Route::when('account/signup', 'guest');
   // Controller catch-all
   Route::controller('account', 'AccountController');
 
@@ -25,8 +24,7 @@
   /*
    * Contest controller
    */
-  Route::get('contest/create', ['before' => 'auth', 'uses' => 'ContestController@getCreate']);
-  Route::post('contest/create', ['before' => 'auth', 'uses' => 'ContestController@postCreate']);
+  Route::when('contest/create', 'auth');
   // Controller catch-all
   Route::controller('contest', 'ContestController');
 
