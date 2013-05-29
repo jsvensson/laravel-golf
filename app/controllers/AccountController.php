@@ -80,10 +80,10 @@ class AccountController extends BaseController {
     $val = Validator::make(
       Input::all(),
       [
-        'email' => 'required|email|unique:users',
-        'first_name' => 'required',
-        'last_name' => 'required',
-        'password' => 'required|min:6',
+        'email'                 => 'required|email|unique:users',
+        'first_name'            => 'required',
+        'last_name'             => 'required',
+        'password'              => 'required|min:6',
         'password_confirmation' => 'required_with:password|same:password'
       ]
     );
@@ -97,7 +97,7 @@ class AccountController extends BaseController {
     else
     {
       $newuser = Sentry::getUserProvider()->create([
-        'email' => strtolower(Input::get('email')),
+        'email'    => strtolower(Input::get('email')),
         'password' => Input::get('password'),
       ]);
 
@@ -117,9 +117,9 @@ class AccountController extends BaseController {
 
       // Create profile
       $profile = [
-        'user_id' => $user->id,
+        'user_id'    => $user->id,
         'first_name' => Input::get('first_name'),
-        'last_name' => Input::get('last_name')
+        'last_name'  => Input::get('last_name')
       ];
       $user->profile()->insert($profile);
 

@@ -34,9 +34,9 @@ class ContestController extends BaseController
     $val = Validator::make(
       Input::all(),
       [
-        'name' => 'required',
+        'name'       => 'required',
         'start_date' => 'required|date_format:Y-m-d|before:' . Input::get('end_date'),
-        'end_date' => 'required|date_format:Y-m-d|after:' . Input::get('start_date'),
+        'end_date'   => 'required|date_format:Y-m-d|after:' . Input::get('start_date'),
       ]
     );
 
@@ -48,10 +48,10 @@ class ContestController extends BaseController
     else {
       // Validation passed, create contest
       $c = [
-        'owner_id' => $this->user->id,
-        'name' => Input::get('name'),
+        'owner_id'   => $this->user->id,
+        'name'       => Input::get('name'),
         'start_date' => Input::get('start_date'),
-        'end_date' => Input::get('end_date')
+        'end_date'   => Input::get('end_date')
       ];
 
       $contest = new Contest($c);
