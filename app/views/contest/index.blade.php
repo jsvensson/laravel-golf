@@ -20,7 +20,7 @@
       <td><?= $contest->start_date ?></td>
       <td><?= $contest->end_date ?></td>
       <td><a href="{{ url('player/' . $contest->owner->id) }}"><?= $contest->owner->initial_name ?><a></td>
-      <td><?= $contest->players ?></td>
+      <td><?= $contest->player_count ?></td>
     </tr>
 @endforeach
   </table>
