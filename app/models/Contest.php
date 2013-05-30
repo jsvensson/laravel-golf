@@ -27,9 +27,9 @@ class Contest extends Eloquent
    *
    * @return object
    */
-  public function player()
+  public function players()
   {
-    return $this->hasMany('User');
+    return $this->belongsToMany('User', 'users_contests');
   }
 
   /**
