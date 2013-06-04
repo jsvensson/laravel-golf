@@ -34,7 +34,7 @@ class CreateContestTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('contests');
 	}
 
 }
