@@ -44,6 +44,16 @@ Route::filter('auth.basic', function()
 	return Auth::basic();
 });
 
+Route::filter('admin', function()
+{
+  if (!Sentry::check()) return Redirect::to('account/login');
+
+  if (!Sentry::user()->has_access('admin'))
+  {
+    return Response::error('403');
+  }
+});
+
 /*
 |--------------------------------------------------------------------------
 | Guest Filter
