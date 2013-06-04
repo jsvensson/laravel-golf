@@ -19,6 +19,12 @@ class PlayerController extends BaseController
       ->with('user', $this->user);
   }
 
+  public function getSettings()
+  {
+    return View::make('player.settings')
+      ->with('user', $this->user);
+  }
+
   public function getShow($player_id)
   {
     return View::make('player.show');
