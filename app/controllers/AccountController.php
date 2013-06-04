@@ -97,7 +97,7 @@ class AccountController extends BaseController {
       ]);
 
       // Assign to default group
-      $group = Sentry::getGroupProvider()->findByName('user');
+      $group = Sentry::getGroupProvider()->findByName('default');
       $newuser->addGroup($group);
 
       // Activation doodads

@@ -4,11 +4,14 @@ class SentryGroupSeeder extends Seeder
 {
   public function run()
   {
-    // Standard user group
+    // Default user group
     $group = Sentry::getGroupProvider()->create([
-      'name' => 'user',
+      'name' => 'default',
       'permissions' => [
-        'admin' => 0,
+        'contest.create' => 1,
+        'contest.invite' => 1,
+        'contest.lock'   => 1,
+        'contest.edit'   => 1,
       ]
     ]);
 
