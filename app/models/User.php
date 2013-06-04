@@ -94,4 +94,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     return trim($initial_name);
   }
 
+  public function permissions()
+  {
+    $usr = Sentry::getUserProvider()->findById($this->id);
+    return $usr->getMergedPermissions();
+  }
 }
