@@ -59,7 +59,7 @@ class ContestController extends BaseController
       $contest->players()->attach($this->user->id);
 
       // TODO: contest view
-      return $contest;
+      return Redirect::to('contest/show/' . $contest->id);
     }
   }
 
