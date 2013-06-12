@@ -91,32 +91,7 @@ class AccountController extends BaseController {
     }
     else
     {
-      $newuser = Sentry::getUserProvider()->create([
-        'email'    => strtolower(Input::get('email')),
-        'password' => Input::get('password'),
-      ]);
-
-      // Assign to default group
-      $group = Sentry::getGroupProvider()->findByName('default');
-      $newuser->addGroup($group);
-
-      // Activation doodads
-      $activation = $newuser->getActivationCode();
-      $newuser->attemptActivation($activation);
-
-      // Fetch User model object instead of Sentry object
-      $user_id = Sentry::getUserProvider()
-        ->findByLogin(Input::get('email'))
-        ->id;
-      $user = User::find($user_id);
-
-      // Create profile
-      $profile = [
-        'user_id'    => $user->id,
-        'first_name' => Input::get('first_name'),
-        'last_name'  => Input::get('last_name')
-      ];
-      $user->profile()->insert($profile);
+      $newuser = User::register(Input::all(), true);
 
       // Log new user in
       Sentry::login($newuser);

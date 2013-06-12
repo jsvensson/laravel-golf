@@ -5,7 +5,7 @@ class SentryTestUserSeeder extends Seeder
   public function run()
   {
     // Test users
-    $users = [
+    $test_users = [
       [
         'email'      => 'test1@example.net',
         'first_name' => 'Test',
@@ -27,34 +27,9 @@ class SentryTestUserSeeder extends Seeder
     ];
 
     // Seed with test accounts
-    foreach ($users as $u) {
-      $newuser = Sentry::getUserProvider()->create([
-        'email'    => $u['email'],
-        'password' => $u['password']
-      ]);
-
-      // Assign to default group
-      $group = Sentry::getGroupProvider()->findByName('default');
-      $newuser->addGroup($group);
-
-      // Activation doodads
-      $activation = $newuser->getActivationCode();
-      $newuser->attemptActivation($activation);
-
-      // Fetch User model object instead of Sentry object
-      $user_id = Sentry::getUserProvider()
-        ->findByLogin($u['email'])
-        ->id;
-      $user = User::find($user_id);
-
-      // Create profile
-      $profile = [
-        'user_id'    => $user->id,
-        'first_name' => $u['first_name'],
-        'last_name'  => $u['last_name']
-      ];
-      $user->profile()->insert($profile);
-    };
+    foreach ($test_users as $u) {
+      User::register($u, false);
+    }
   }
 }
 
