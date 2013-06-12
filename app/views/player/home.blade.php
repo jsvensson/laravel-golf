@@ -3,6 +3,12 @@
 @section('content')
   <h2>Inloggad användarprofil</h2>
 
-<pre>{{ var_dump(Auth::user()) }}</pre>
+<pre>
+  {{ var_dump($user->full_name) }}
+</pre>
+
+<pre>
+  {{ var_dump($user->permissions()) }}
+</pre>
 
 @stop
