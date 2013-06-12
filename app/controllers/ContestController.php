@@ -10,8 +10,8 @@ class ContestController extends BaseController
    */
   public function getIndex()
   {
-    // TODO: open contests only
-    $contests = Contest::all();
+    // FIXME: fulhack
+    $contests = Contest::where('is_open', true)->get();
 
     return View::make('contest.index')
       ->with('contests', $contests)
