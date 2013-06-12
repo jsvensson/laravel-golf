@@ -23,6 +23,13 @@ class SentryGroupSeeder extends Seeder
       ]
     ]);
 
+    // Superuser root group
+    $group = Sentry::getGroupProvider()->create([
+      'name' => 'superuser',
+      'permissions' => [
+        'superuser' => 1,
+      ]
+    ]);
   }
 
 }
