@@ -2,15 +2,9 @@
 
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
+use Cartalyst\Sentry\Users\Eloquent\User as SentryUserModel;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
-
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'users';
+class User extends SentryUserModel implements UserInterface, RemindableInterface {
 
   /**
    * Fields accepted for mass assignment
@@ -39,6 +33,38 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
   public function contests()
   {
     return $this->belongsToMany('Contest', 'users_contests');
+  }
+
+  public static function register($u, $activate = false)
+  {
+    $newuser = Sentry::getUserProvider()->create([
+      'email'    => $u['email'],
+      'password' => $u['password']
+    ]);
+
+    // Assign to default group
+    $group = Sentry::getGroupProvider()->findByName('default');
+    $newuser->addGroup($group);
+
+    // Fetch User model object instead of Sentry object
+    $user_id = Sentry::getUserProvider()->findByLogin($u['email'])->id;
+    $user = User::find($user_id);
+
+    // Create profile
+    $profile = [
+      'user_id'    => $user->id,
+      'first_name' => $u['first_name'],
+      'last_name'  => $u['last_name']
+    ];
+    $user->profile()->insert($profile);
+
+    // Activate user?
+    if ($activate === true) {
+      $activation = $newuser->getActivationCode();
+      $newuser->attemptActivation($activation);
+    }
+
+    return $newuser;
   }
 
 	/**
