@@ -12,9 +12,9 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 
 		// $this->call('UserTableSeeder');
-    $this->call('SentryGroupSeeder');
-    $this->call('SentryTestUserSeeder');
+    $this->call('SentryGroupSeeder');       // Create default groups
     $this->call('SentrySuperUserSeeder');   // Create superuser account
+    $this->call('SentryTestUserSeeder');    // Create test user accounts
 	}
 
 }
