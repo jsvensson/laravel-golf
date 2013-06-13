@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder {
 		// $this->call('UserTableSeeder');
     $this->call('SentryGroupSeeder');
     $this->call('SentryTestUserSeeder');
+    $this->call('SentrySuperUserSeeder');   // Create superuser account
 	}
 
 }
