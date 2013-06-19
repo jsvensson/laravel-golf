@@ -6,9 +6,9 @@ class SentrySuperUserSeeder extends Seeder
   {
     // Create initial superuser
     $superuser = [
-    'email'      => 'johan@atomicplayboy.net',
-    'first_name' => 'Johan',
-    'last_name'  => 'Svensson',
+    'email'      => 'root@example.net',
+    'first_name' => 'Master',
+    'last_name'  => 'Account',
     'password'   => 'changeme'
     ];
     $su = User::register($superuser, true);
