@@ -21,14 +21,14 @@
   /*
    * Player controller (resource)
    */
-  Route::resource('player', 'PlayerController');
+  Route::resource('player', 'PlayerController', ['only' => ['index']]);
 
   /*
    * Contest controller (resource)
    */
   Route::when('contest/create', 'auth');
   Route::resource('contest', 'ContestController');
-  Route::resource('contest.players', 'ContestPlayerController');
+  Route::resource('contest.players', 'ContestPlayerController', ['only' => ['index']]);
 
 /*
 |--------------------------------------------------------------------------
