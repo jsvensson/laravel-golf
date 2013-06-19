@@ -7,11 +7,15 @@
 */
 
   /*
+   * Authorization controller
+   */
+  Route::when('auth/signup', 'guest');
+  Route::when('auth/login', 'guest');
+  Route::controller('auth', 'AuthController');
+
+  /*
    * Account controller
    */
-  Route::when('account/signup', 'guest');
-  Route::when('account/login', 'guest');
-  // Controller catch-all
   Route::controller('account', 'AccountController');
 
   /*

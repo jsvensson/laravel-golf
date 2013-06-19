@@ -17,10 +17,10 @@
 
   <ul>
   @if(Sentry::check())
-    <li>{{ HTML::link('account/logout', 'Logga ut') }}</li>
+    <li>{{ HTML::link('auth/logout', 'Logga ut') }}</li>
   @else
-    <li>{{ HTML::link('account/signup', 'Registrera konto') }}</li>
-    <li>{{ HTML::link('account/login', 'Logga in') }}</li>
+    <li>{{ HTML::link('auth/signup', 'Registrera konto') }}</li>
+    <li>{{ HTML::link('auth/login', 'Logga in') }}</li>
   @endif
 
   </ul>
