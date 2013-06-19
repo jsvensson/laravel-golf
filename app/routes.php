@@ -27,8 +27,8 @@
    * Contest controller (resource)
    */
   Route::when('contest/create', 'auth');
-  // Controller catch-all
   Route::resource('contest', 'ContestController');
+  Route::resource('contest.players', 'ContestPlayerController');
 
 /*
 |--------------------------------------------------------------------------
