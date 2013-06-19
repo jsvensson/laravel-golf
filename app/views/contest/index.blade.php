@@ -16,10 +16,10 @@
     </tr>
 @foreach ($contests as $contest)
     <tr>
-      <td><a href="{{ url('contest/show/' . $contest->id) }}"><?= $contest->name ?></a></td>
+      <td><a href="{{ route('contest.show', $contest->id) }}"><?= $contest->name ?></a></td>
       <td><?= $contest->start_date ?></td>
       <td><?= $contest->end_date ?></td>
-      <td><a href="{{ url('player/' . $contest->owner->id) }}"><?= $contest->owner->initial_name ?><a></td>
+      <td><a href="{{ route('player.show', $contest->owner->id) }}"><?= $contest->owner->initial_name ?><a></td>
       <td><?= $contest->player_count ?></td>
     </tr>
 @endforeach
