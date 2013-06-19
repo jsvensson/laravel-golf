@@ -14,9 +14,9 @@
   Route::controller('auth', 'AuthController');
 
   /*
-   * Account controller
+   * Home controller
    */
-  Route::controller('account', 'AccountController');
+  Route::controller('home', 'HomeController');
 
   /*
    * Player controller

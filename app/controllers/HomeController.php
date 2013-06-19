@@ -1,6 +1,6 @@
 <?php
 
-class AccountController extends BaseController {
+class HomeController extends BaseController {
 
   /**
    * Default action for Account controller.
@@ -9,12 +9,12 @@ class AccountController extends BaseController {
    */
   public function getIndex()
   {
-    return View::make('account.index');
+    return View::make('home.index');
   }
 
   public function getSettings()
   {
-    return View::make('account.settings')
+    return View::make('home.settings')
       ->with('user', $this->user);
   }
 
