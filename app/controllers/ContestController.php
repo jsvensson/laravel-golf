@@ -4,11 +4,11 @@ class ContestController extends BaseController
 {
 
   /**
-   * Default action for Contest controller.
+   * Display a listing of the resource.
    *
-   * @return void
+   * @return Response
    */
-  public function getIndex()
+  public function index()
   {
     // FIXME: fulhack
     $contests = Contest::where('is_open', true)->get();
@@ -19,17 +19,22 @@ class ContestController extends BaseController
   }
 
   /**
-   * Create action for Contest controller.
+   * Show the form for creating a new resource.
    *
-   * @return void
+   * @return Response
    */
-  public function getCreate()
+  public function create()
   {
     return View::make('contest.create')
       ->with('user', $this->user);
   }
 
-  public function postCreate()
+  /**
+   * Store a newly created resource in storage.
+   *
+   * @return Response
+   */
+  public function store()
   {
     $val = Validator::make(
       Input::all(),
@@ -63,7 +68,7 @@ class ContestController extends BaseController
     }
   }
 
-  public function getShow($contest_id)
+  public function show($contest_id)
   {
     $contest = Contest::findOrFail($contest_id);
     return View::make('contest.show')

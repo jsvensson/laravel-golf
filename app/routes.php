@@ -27,11 +27,11 @@
   Route::controller('player', 'PlayerController');
 
   /*
-   * Contest controller
+   * Contest controller (resource)
    */
   Route::when('contest/create', 'auth');
   // Controller catch-all
-  Route::controller('contest', 'ContestController');
+  Route::resource('contest', 'ContestController');
 
 /*
 |--------------------------------------------------------------------------
