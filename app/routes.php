@@ -19,12 +19,9 @@
   Route::controller('home', 'HomeController');
 
   /*
-   * Player controller
+   * Player controller (resource)
    */
-  Route::get('home', 'PlayerController@getHome');
-  Route::get('player/{id}', 'PlayerController@getShow');
-  // Controller catch-all
-  Route::controller('player', 'PlayerController');
+  Route::resource('player', 'PlayerController');
 
   /*
    * Contest controller (resource)

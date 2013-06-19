@@ -3,25 +3,10 @@
 class PlayerController extends BaseController
 {
 
-  /**
-   * Default action for Player controller.
-   *
-   * @return void
-   */
-  public function getIndex()
+  public function show($player_id)
   {
-    return View::make('player.index');
-  }
-
-  public function getHome()
-  {
-    return View::make('player.home')
+    return View::make('player.show')
       ->with('user', $this->user);
-  }
-
-  public function getShow($player_id)
-  {
-    return View::make('player.show');
   }
 
 }
