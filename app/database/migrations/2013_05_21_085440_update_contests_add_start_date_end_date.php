@@ -14,7 +14,8 @@ class UpdateContestsAddStartDateEndDate extends Migration {
 		Schema::table('contests', function($table)
     {
       $table->date('start_date');
-      $table->date('end_date');
+      $table->date('end_date')
+        ->nullable();
     });
 	}
 
