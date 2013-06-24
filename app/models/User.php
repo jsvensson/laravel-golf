@@ -51,12 +51,11 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
     $user = User::find($user_id);
 
     // Create profile
-    $profile = [
-      'user_id'    => $user->id,
+    $profile = new Profile([
       'first_name' => $u['first_name'],
       'last_name'  => $u['last_name']
-    ];
-    $user->profile()->insert($profile);
+    ]);
+    $user->profile()->save($profile);
 
     // Activate user?
     if ($activate === true) {
