@@ -31,6 +31,13 @@
     </div>
   </div>
   <div class="control-group">
+    <label class="control-label" for="website">Hemsida</label>
+    <div class="controls">
+      <input class="input" type="url" id="website" name="website" placeholder="http://" value="{{ $user->profile->website }}">
+    </div>
+  </div>
+
+  <div class="control-group">
     <div class="controls">
       <button type="submit" class="btn">Spara inställningar</button>
     </div>
