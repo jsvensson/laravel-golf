@@ -56,6 +56,11 @@ class HomeController extends BaseController {
     }
   }
 
+  public function getSetPassword()
+  {
+    return View::make('home.set_password');
+  }
+
 }
 
 /* EOF */
