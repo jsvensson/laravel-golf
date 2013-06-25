@@ -26,6 +26,22 @@ class HomeController extends BaseController {
     return Redirect::to('home/settings');
   }
 
+  public function getSetEmail()
+  {
+    return View::make('home.set_email')
+      ->with('user', $this->user);
+  }
+
+  public function postSetEmail()
+  {
+    $e = Input::only('email');
+
+    $this->user->email = $e['email'];
+    $this->user->save();
+
+    return Redirect::to('home/set-email');
+  }
+
 }
 
 /* EOF */
