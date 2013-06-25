@@ -14,8 +14,7 @@ class ContestController extends BaseController
     $contests = Contest::where('is_open', true)->get();
 
     return View::make('contest.index')
-      ->with('contests', $contests)
-      ->with('user', $this->user);
+      ->with('contests', $contests);
   }
 
   /**
@@ -25,8 +24,7 @@ class ContestController extends BaseController
    */
   public function create()
   {
-    return View::make('contest.create')
-      ->with('user', $this->user);
+    return View::make('contest.create');
   }
 
   /**
@@ -72,8 +70,7 @@ class ContestController extends BaseController
   {
     $contest = Contest::findOrFail($contest_id);
     return View::make('contest.show')
-      ->with('contest', $contest)
-      ->with('user', $this->user);
+      ->with('contest', $contest);
   }
 
 }

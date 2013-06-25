@@ -10,8 +10,7 @@ class PageController extends BaseController {
 
 	public function getFrontPage()
 	{
-		return View::make('hello')
-      ->with('user', $this->user);
+		return View::make('hello');
 	}
 
 }

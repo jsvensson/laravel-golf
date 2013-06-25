@@ -14,8 +14,7 @@ class ContestPlayerController extends BaseController {
 
     return View::make('contest.players.index')
       ->with('contest', $contest)
-      ->with('players', $players)
-      ->with('user', $this->user);
+      ->with('players', $players);
 	}
 
 }

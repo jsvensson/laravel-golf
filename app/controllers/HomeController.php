@@ -9,14 +9,12 @@ class HomeController extends BaseController {
    */
   public function getIndex()
   {
-    return View::make('home.index')
-      ->with('user', $this->user);
+    return View::make('home.index');
   }
 
   public function getSettings()
   {
-    return View::make('home.settings')
-      ->with('user', $this->user);
+    return View::make('home.settings');
   }
 
   public function postSettings()
@@ -28,8 +26,7 @@ class HomeController extends BaseController {
 
   public function getSetEmail()
   {
-    return View::make('home.set_email')
-      ->with('user', $this->user);
+    return View::make('home.set_email');
   }
 
   public function postSetEmail()
