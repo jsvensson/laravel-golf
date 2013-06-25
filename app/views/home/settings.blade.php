@@ -4,9 +4,10 @@
 
 <h2>Inställningar</h2>
 
-<a href="{{ URL::to('home/set-password') }}">Ändra lösenord</a>
-<a href="{{ URL::to('home/set-email') }}">Ändra lösenord</a>
-
+<ul>
+  <li><a href="{{ URL::to('home/set-password') }}">Ändra lösenord</a></li>
+  <li><a href="{{ URL::to('home/set-email') }}">Ändra email</a></li>
+</ul>
 
 <h3>Kontouppgifter</h3>
 
