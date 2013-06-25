@@ -34,12 +34,29 @@ class HomeController extends BaseController {
 
   public function postSetEmail()
   {
-    $e = Input::only('email');
+    $e = Input::only('email', 'email2');
 
-    $this->user->email = $e['email'];
-    $this->user->save();
+    $rules = [
+      'email'  => 'required|email|unique:users',
+      'email2' => 'required|same:email'
+    ];
 
-    return Redirect::to('home/set-email');
+    $val = Validator::make($e, $rules);
+
+    if ($val->fails()) {
+      return Redirect::to('home/set-email')
+        ->withInput(Input::all())
+        ->withErrors($val);
+    }
+    else {
+      $this->user->email = $e['email'];
+      $this->user->save();
+
+      Session::flash('alert_type', 'success');
+      Session::flash('alert', 'Din email-adress är nu <b>' . $e['email'] . '</b>.');
+
+      return Redirect::to('home/settings');
+    }
   }
 
 }
