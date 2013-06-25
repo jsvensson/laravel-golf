@@ -3,7 +3,6 @@
 class BaseController extends Controller {
 
   protected $layout = 'layout.default';
-  protected $user;
 
   /**
    * Constructor for the base controller.
@@ -14,13 +13,15 @@ class BaseController extends Controller {
    */
   public function __construct()
   {
-    // Set up $this->user
+    // Set up current user in $user for all views
     if (Sentry::check()) {
-      $this->user = User::find(Sentry::getUser()->id);
+      $user = User::find(Sentry::getUser()->id);
     }
     else {
-      $this->user = false;
+      $user = false;
     }
+
+    View::share('user', $user);
   }
 
 	/**
