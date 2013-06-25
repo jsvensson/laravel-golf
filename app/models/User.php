@@ -37,10 +37,12 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
 
   public static function register($u, $activate = false)
   {
+    Log::info('Creating user ' . $u['email'] . ", activate = " . ($activate ? 'true' : 'false'));
     $newuser = Sentry::getUserProvider()->create([
       'email'    => $u['email'],
       'password' => $u['password']
     ]);
+    Log::info('Created user id->' . $newuser->id);
 
     // Assign to default group
     $group = Sentry::getGroupProvider()->findByName('default');
