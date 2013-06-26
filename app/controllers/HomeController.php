@@ -24,12 +24,12 @@ class HomeController extends BaseController {
     return Redirect::to('home/settings');
   }
 
-  public function getSetEmail()
+  public function getEmail()
   {
-    return View::make('home.set_email');
+    return View::make('home.email');
   }
 
-  public function postSetEmail()
+  public function postEmail()
   {
     $e = Input::only('email', 'email2');
 
@@ -41,7 +41,7 @@ class HomeController extends BaseController {
     $val = Validator::make($e, $rules);
 
     if ($val->fails()) {
-      return Redirect::to('home/set-email')
+      return Redirect::to('home/email')
         ->withInput(Input::all())
         ->withErrors($val);
     }
@@ -56,9 +56,9 @@ class HomeController extends BaseController {
     }
   }
 
-  public function getSetPassword()
+  public function getPassword()
   {
-    return View::make('home.set_password');
+    return View::make('home.password');
   }
 
 }

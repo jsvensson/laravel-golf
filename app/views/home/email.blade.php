@@ -6,7 +6,7 @@
 
 <p>Din nuvarande email är <b>{{ $user->email }}</b>.</p>
 
-{{ Form::open(['url' => 'home/set-email', 'method' => 'post', 'class' => 'form-horizontal']) }}
+{{ Form::open(['url' => 'home/email', 'method' => 'post', 'class' => 'form-horizontal']) }}
 <form class="form-horizontal">
   <div class="control-group">
     <label class="control-label" for="email">Ny adress</label>
