@@ -7,10 +7,10 @@
 {{ Form::open(['url' => 'home/password', 'method' => 'post', 'class' => 'form-horizontal']) }}
 
   <div class="control-group">
-    <label class="control-label" for="current_password">Nuvarande lösenord</label>
+    <label class="control-label" for="old_password">Nuvarande lösenord</label>
     <div class="controls">
-      {{ Form::password('current_password') }}
-      <span class="text-error">{{ $errors->first('current_password') }}</span>
+      {{ Form::password('old_password') }}
+      <span class="text-error">{{ $errors->first('old_password') }}</span>
     </div>
   </div>
 
