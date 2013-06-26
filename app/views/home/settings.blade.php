@@ -11,8 +11,8 @@
 @endif
 
 <ul>
-  <li><a href="{{ URL::to('home/set-password') }}">Ändra lösenord</a></li>
-  <li><a href="{{ URL::to('home/set-email') }}">Ändra email</a></li>
+  <li><a href="{{ URL::to('home/password') }}">Ändra lösenord</a></li>
+  <li><a href="{{ URL::to('home/email') }}">Ändra email</a></li>
 </ul>
 
 <h3>Kontouppgifter</h3>
