@@ -61,6 +61,27 @@ class HomeController extends BaseController {
     return View::make('home.password');
   }
 
+  public function postPassword()
+  {
+    $e = Input::only('new_password', 'new_password_repeat');
+
+    $rules = [
+      'old_password'        => 'required',
+      'new_password'        => 'required',
+      'new_password_repeat' => 'required'
+    ];
+
+    $val = Validator::make($e, $rules);
+
+    if ($val->fails()) {
+      return Input::get();
+    }
+    else {
+      return "Korrekt";
+    }
+
+  }
+
 }
 
 /* EOF */
