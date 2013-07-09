@@ -23,10 +23,10 @@
   </div>
 
   <div class="control-group">
-    <label class="control-label" for="repeat_new_password">Upprepa nytt lösenord</label>
+    <label class="control-label" for="new_password_repeat">Upprepa nytt lösenord</label>
     <div class="controls">
-      {{ Form::password('repeat_new_password') }}
-      <span class="text-error">{{ $errors->first('repeat_new_password') }}</span>
+      {{ Form::password('new_password_repeat') }}
+      <span class="text-error">{{ $errors->first('new_password_repeat') }}</span>
     </div>
   </div>
 
