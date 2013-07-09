@@ -47,6 +47,14 @@ class Contest extends Eloquent
     return count($this->players);
   }
 
+  public function scopeAvailable($query)
+  {
+    $owner_id = Sentry::getUser()->id;
+    
+    return $query->where('is_open', '=', true)
+      ->orWhere('owner_id', $owner_id);
+  }
+
 }
 
 
