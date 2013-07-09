@@ -3,7 +3,7 @@
 @section('content')
   <h2>Skapa ny tävling</h2>
 
-  {{ Form::open() }}
+  {{ Form::open(['route' => 'contest.store']) }}
 
   {{ Form::label('name', 'Tävlingens namn') }}
   {{ Form::text('name', false, ['placeholder' => 'Namn']) }} {{ $errors->first('name') }}
