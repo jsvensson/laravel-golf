@@ -25,5 +25,4 @@
 @endforeach
   </table>
 
-
 @stop
