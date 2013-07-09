@@ -21,7 +21,7 @@
   /*
    * Player controller (resource)
    */
-  Route::resource('player', 'PlayerController', ['only' => ['index']]);
+  Route::resource('player', 'PlayerController', ['only' => ['show']]);
 
   /*
    * Contest controller (resource)
