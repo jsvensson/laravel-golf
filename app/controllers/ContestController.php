@@ -60,9 +60,10 @@ class ContestController extends BaseController
 
       $contest = new Contest($c);
       $contest->save();
-      $contest->players()->attach($owner_id);
 
-      // TODO: contest view
+      // Attach and activate owner
+      $contest->players()->attach($owner_id, ['is_active' => true]);
+
       return Redirect::route('contest.show', $contest->id);
     }
   }
