@@ -50,8 +50,9 @@ class ContestController extends BaseController
     }
     else {
       // Validation passed, create contest
+      $owner_id = Sentry::getUser()->id;
       $c = [
-        'owner_id'   => $this->user->id,
+        'owner_id'   => $owner_id,
         'name'       => Input::get('name'),
         'start_date' => Input::get('start_date'),
         'end_date'   => Input::get('end_date')
@@ -59,10 +60,10 @@ class ContestController extends BaseController
 
       $contest = new Contest($c);
       $contest->save();
-      $contest->players()->attach($this->user->id);
+      $contest->players()->attach($owner_id);
 
       // TODO: contest view
-      return Redirect::to('contest/show/' . $contest->id);
+      return Redirect::route('contest.show', $contest->id);
     }
   }
 
