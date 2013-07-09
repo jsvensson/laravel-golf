@@ -69,6 +69,30 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
     return $newuser;
   }
 
+  public static function currentUser()
+  {
+    if (Sentry::check()) {
+      $user = User::find(Sentry::getUser()->id);
+    }
+    else {
+      $user = false;
+    }
+
+    return $user;
+  }
+
+  public static function currentId()
+  {
+    if (User::currentUser()) {
+      $user_id = User::currentUser()->id;
+    }
+    else {
+      $user_id = false;
+    }
+
+    return $user_id;
+  }
+
 	/**
 	 * Get the unique identifier for the user.
 	 *

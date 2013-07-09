@@ -46,8 +46,9 @@ class HomeController extends BaseController {
         ->withErrors($val);
     }
     else {
-      $this->user->email = $e['email'];
-      $this->user->save();
+      $user = User::currentUser();
+      $user->email = $e['email'];
+      $user->save();
 
       Session::flash('alert_type', 'success');
       Session::flash('alert', 'Din email-adress är nu <b>' . $e['email'] . '</b>.');

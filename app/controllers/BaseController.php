@@ -13,15 +13,8 @@ class BaseController extends Controller {
    */
   public function __construct()
   {
-    // Set up current user in $user for all views
-    if (Sentry::check()) {
-      $user = User::find(Sentry::getUser()->id);
-    }
-    else {
-      $user = false;
-    }
-
-    View::share('user', $user);
+    // Set up current user for all views
+    View::share('user', User::currentUser());
   }
 
 	/**

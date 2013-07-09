@@ -49,7 +49,7 @@ class Contest extends Eloquent
 
   public function scopeAvailable($query)
   {
-    $owner_id = Sentry::getUser()->id;
+    $owner_id = User::currentId();
 
     return $query->where('is_open', true)
       ->orWhere('owner_id', $owner_id);
