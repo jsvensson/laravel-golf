@@ -51,7 +51,7 @@ class Contest extends Eloquent
   {
     $owner_id = Sentry::getUser()->id;
 
-    return $query->where('is_open', '=', true)
+    return $query->where('is_open', true)
       ->orWhere('owner_id', $owner_id);
   }
 
