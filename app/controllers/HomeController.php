@@ -42,7 +42,7 @@ class HomeController extends BaseController {
 
     if ($val->fails()) {
       return Redirect::to('home/email')
-        ->withInput(Input::all())
+        ->withInput(Input::only('email'))
         ->withErrors($val);
     }
     else {
