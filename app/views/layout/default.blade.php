@@ -9,6 +9,7 @@
 @include('partial.nav')
 
 <div class="container">
+  @include('partial.flash')
   @yield('content')
 </div>
 

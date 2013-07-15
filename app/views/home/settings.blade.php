@@ -4,12 +4,6 @@
 
 <h2>Inställningar</h2>
 
-@if(Session::has('alert'))
-  <div class="alert alert-success">
-    {{ Session::get('alert') }}
-  </div>
-@endif
-
 <ul>
   <li><a href="{{ URL::to('home/password') }}">Ändra lösenord</a></li>
   <li><a href="{{ URL::to('home/email') }}">Ändra email</a></li>
