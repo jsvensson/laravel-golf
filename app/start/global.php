@@ -87,3 +87,6 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+/* Load custom validation rules */
+require app_path().'/validator.php';
