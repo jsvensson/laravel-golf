@@ -64,10 +64,11 @@ class HomeController extends BaseController {
 
   public function postPassword()
   {
-    $e = Input::only('new_password', 'new_password_repeat');
+    $user_id = User::currentId();
+    $e = Input::only('old_password', 'new_password', 'new_password_repeat');
 
     $rules = [
-      'old_password'        => 'required',
+      'old_password'        => "required|check_password:$user_id",
       'new_password'        => 'required',
       'new_password_repeat' => 'required'
     ];
@@ -80,7 +81,11 @@ class HomeController extends BaseController {
         ->withErrors($val);
     }
     else {
-      return "Korrekt";
+      $user = User::currentUser();
+      $user->password = Input::get('new_password');
+      $user->save();
+
+      return Redirect::to('home/settings');
     }
 
   }
