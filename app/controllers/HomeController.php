@@ -70,7 +70,7 @@ class HomeController extends BaseController {
     $rules = [
       'old_password'        => "required|check_password:$user_id",
       'new_password'        => 'required',
-      'new_password_repeat' => 'required'
+      'new_password_repeat' => 'required|same:new_password'
     ];
 
     $val = Validator::make($e, $rules);
