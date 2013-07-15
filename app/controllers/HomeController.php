@@ -85,6 +85,9 @@ class HomeController extends BaseController {
       $user->password = Input::get('new_password');
       $user->save();
 
+      Session::flash('alert_type', 'success');
+      Session::flash('alert', 'Ditt lösenord har ändrats.');
+
       return Redirect::to('home/settings');
     }
 
