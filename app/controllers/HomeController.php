@@ -20,7 +20,7 @@ class HomeController extends BaseController {
   public function postSettings()
   {
     $p = Input::only('first_name', 'last_name', 'handicap', 'website');
-    $this->user->profile->update($p);
+    User::currentUser()->profile->update($p);
     return Redirect::to('home/settings');
   }
 
