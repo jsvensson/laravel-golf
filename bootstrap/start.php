@@ -26,11 +26,10 @@ $app->redirectIfTrailingSlash();
 |
 */
 
-$env = $app->detectEnvironment(array(
-
-  'local' => array('cortana'),
-
-));
+$env = $app->detectEnvironment(function()
+{
+  return $_SERVER['LARAVEL_ENV'];
+});
 
 /*
 |--------------------------------------------------------------------------
