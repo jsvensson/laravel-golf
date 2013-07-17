@@ -26,10 +26,10 @@ $app->redirectIfTrailingSlash();
 |
 */
 
-$env = $app->detectEnvironment(function()
-{
-  return $_SERVER['LARAVEL_ENV'];
-});
+$env = $app->detectEnvironment([
+  'local'      => ['localhost'],
+  'production' => ['*.gopagoda.com']
+]);
 
 /*
 |--------------------------------------------------------------------------
