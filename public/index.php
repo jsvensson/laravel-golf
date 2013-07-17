@@ -26,7 +26,11 @@ require __DIR__.'/../bootstrap/autoload.php';
 |--------------------------------------------------------------------------
 |
 | We need to illuminate PHP development, so let's turn on the lights.
+<<<<<<< HEAD
 | This bootstrap the framework and gets it ready for use, then it
+=======
+| This bootstraps the framework and gets it ready for use, then it
+>>>>>>> 3cde67f10fe3980737cdb7526a13ecae74895155
 | will load up this application so that we can run it and send
 | the responses back to the browser and delight these users.
 |

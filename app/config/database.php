@@ -55,7 +55,7 @@ return array(
 		'mysql_dev' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-      'port'      => '8889',
+			'port'      => '8889',
 			'database'  => 'golf_l4',
 			'username'  => 'root',
 			'password'  => 'root',
@@ -115,7 +115,7 @@ return array(
 		'cluster' => true,
 
 		'default' => array(
-			'host'     => '127.0.0.1',
+			'host'     => 'tunnel.pagodabox.com',
 			'port'     => 6379,
 			'database' => 0,
 		),
