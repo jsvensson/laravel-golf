@@ -29,6 +29,7 @@
   Route::when('contest/create', 'auth');
   Route::resource('contest', 'ContestController');
   Route::resource('contest.players', 'ContestPlayerController', ['only' => ['index']]);
+  Route::resource('contest.events', 'ContestEventController');
 
 /*
 |--------------------------------------------------------------------------
