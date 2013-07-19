@@ -29,7 +29,7 @@ class Contest extends Eloquent
    */
   public function players()
   {
-    return $this->belongsToMany('User', 'users_contests');
+    return $this->belongsToMany('User', 'contests_players');
   }
 
   /**
