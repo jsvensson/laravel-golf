@@ -15,6 +15,11 @@ class ContestPlayerController extends BaseController {
       ->with('contest', $contest);
 	}
 
+  public function show($contest_id, $player_id)
+  {
+    return "TODO: Show contest $contest_id results for player $player_id";
+  }
+
 }
 
 /* EOF */
