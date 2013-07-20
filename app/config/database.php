@@ -127,7 +127,7 @@ return array(
 
 		'default' => array(
 			'host'     => 'tunnel.pagodabox.com',
-			'port'     => 6380,
+			'port'     => 6381,
 			'database' => 0,
 		),
 
