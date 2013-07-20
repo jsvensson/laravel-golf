@@ -49,7 +49,7 @@ class ContestController extends BaseController
     }
     else {
       // Validation passed, create contest
-      $owner_id = Sentry::getUser()->id;
+      $owner_id = User::currentId();
       $c = [
         'owner_id'   => $owner_id,
         'name'       => Input::get('name'),
