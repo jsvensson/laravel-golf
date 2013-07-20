@@ -30,7 +30,8 @@ class Event extends Eloquent
    */
   public function players()
   {
-    return $this->belongsToMany('User', 'events_users');
+    return $this->belongsToMany('User', 'events_players');
+      ->withPivot('score');
   }
 
 }
