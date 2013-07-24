@@ -11,17 +11,32 @@
   <div class="flash-notice">{{ Session::get('flash_notice') }}</div>
 @endif
 
-@if(Sentry::check())
-  <p>Inloggad som {{ $user->full_name }}</p>
-@endif
+<div class="row">
+  <div class="span4">
+    @if(Sentry::check())
+      <p>Inloggad som {{ $user->full_name }}</p>
+    @endif
 
-  <ul>
-  @if(Sentry::check())
-    <li>{{ HTML::link('auth/logout', 'Logga ut') }}</li>
-  @else
-    <li>{{ HTML::link('auth/signup', 'Registrera konto') }}</li>
-    <li>{{ HTML::link('auth/login', 'Logga in') }}</li>
-  @endif
+      <ul>
+      @if(Sentry::check())
+        <li>{{ HTML::link('auth/logout', 'Logga ut') }}</li>
+      @else
+        <li>{{ HTML::link('auth/signup', 'Registrera konto') }}</li>
+        <li>{{ HTML::link('auth/login', 'Logga in') }}</li>
+      @endif
 
-  </ul>
+      </ul>
+  </div>
+
+  <div class="span4"></div>
+  
+  <div class="span4">
+    <ul>
+      <li>Users: {{ $count['users'] }}</li>
+      <li>Contests: {{ $count['contests'] }}</li>
+      <li>Events: {{ $count['events'] }}</li>
+    </ul>
+  </div>
+</div>
+
 @stop
