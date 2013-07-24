@@ -17,7 +17,7 @@ class Contest extends Eloquent
    *
    * @return object
    */
-  public function event()
+  public function events()
   {
     return $this->hasMany('ContestEvent');
   }
