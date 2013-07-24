@@ -1,6 +1,6 @@
 <?php
 
-class Event extends Eloquent
+class ContestEvent extends Eloquent
 {
 
   protected $table = 'events';
