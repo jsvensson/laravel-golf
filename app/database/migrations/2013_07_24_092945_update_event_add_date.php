@@ -12,7 +12,7 @@ class UpdateEventAddDate extends Migration {
 	public function up()
 	{
 		Schema::table('events', function($table) {
-			$table->dateTime('date');
+			$table->date('date');
 		});
 	}
 
