@@ -21,6 +21,20 @@ class ContestEventController extends BaseController
       ->with('contest', $contest);
   }
 
+  public function store($contest_id)
+  {
+    $contest = Contest::findOrFail($contest_id);
+
+    $event = new ContestEvent([
+      'contest_id' => $contest->id,
+      'name' => Input::get('name'),
+      'date' => Input::get('date')
+    ]);
+    $event->save();
+
+    return Redirect::route('contest.event.show', [$contest->id, $event->id]);
+  }
+
 }
 
 /* EOF */
