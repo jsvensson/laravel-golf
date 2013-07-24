@@ -16,7 +16,7 @@ class ContestEventController extends BaseController
 
   public function create($contest_id)
   {
-    return "Creating event for contest $contest_id";
+    return View::make('contest.event.create');
   }
 
 }
