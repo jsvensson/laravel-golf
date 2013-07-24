@@ -6,7 +6,7 @@
 
   <p>Skapare: <a href="{{ route('contest.players.show', [$contest->id, $contest->owner->id]) }}">{{ $contest->owner->full_name }}</a></p>
 
-  <p><a href="{{ route('contest.players.index', $contest->id) }}">Visa {{ $contest->player_count }} deltagare</a></p>
+  <p><a href="{{ route('contest.players.index', $contest->id) }}">Visa {{ $contest->players->count() }} deltagare</a></p>
 
   <p><a href="{{ route('contest.event.create', $contest->id) }}">Skapa event</a></p>
 
