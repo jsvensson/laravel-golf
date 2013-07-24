@@ -2,6 +2,8 @@
 
 @section('content')
 
+  {{ Breadcrumbs::render('contest', $contest) }}
+
   <h2>{{ $contest->name }}</h2>
 
   <p>Skapare: <a href="{{ route('contest.players.show', [$contest->id, $contest->owner->id]) }}">{{ $contest->owner->full_name }}</a></p>

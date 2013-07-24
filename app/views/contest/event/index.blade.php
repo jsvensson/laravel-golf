@@ -2,6 +2,8 @@
 
 @section('content')
 
+  {{ Breadcrumbs::render('events', $contest) }}
+
   <h2>Events för {{ $contest->name }}</h2>
 
   <ul>

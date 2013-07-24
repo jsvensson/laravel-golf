@@ -2,6 +2,8 @@
 
 @section('content')
 
+  {{ Breadcrumbs::render('contests') }}
+
   <h2>Aktiva tävlingar</h2>
 
   <p>Visar endast icke-slutna tävlingar samt slutna tävlingar man deltar i.</p>
