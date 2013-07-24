@@ -29,7 +29,7 @@
   </div>
 
   <div class="span4"></div>
-  
+
   <div class="span4">
     <ul>
       <li>Users: {{ $count['users'] }}</li>
