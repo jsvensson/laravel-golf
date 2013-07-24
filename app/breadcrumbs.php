@@ -20,6 +20,12 @@ Breadcrumbs::register('contest', function($b, $contest) {
   $b->push($contest->name, route('contest.show', $contest->id));
 });
 
+// contest.players.index breadcrumb
+Breadcrumbs::register('players', function($b, $contest) {
+  $b->parent('contests');
+  $b->push('Spelare', route('contest.players.index', $contest->id));
+});
+
 // contest.event.index breadcrumb
 Breadcrumbs::register('events', function($b, $contest) {
   $b->parent('contest', $contest);

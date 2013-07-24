@@ -2,6 +2,8 @@
 
 @section('content')
 
+    {{ Breadcrumbs::render('players', $contest) }}
+
   <h2>Deltagare i tävling {{ $contest->id }}</h2>
 
   <ul>
