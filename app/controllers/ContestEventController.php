@@ -10,8 +10,10 @@ class ContestEventController extends BaseController
 
   public function show($contest_id, $event_id)
   {
-    $events = Contest::find($contest_id)->events();
-    return "Showing event $event_id for contest $contest_id";
+    $event = ContestEvent::findOrFail($event_id);
+
+    return View::make('contest.event.show')
+      ->with('event', $event);
   }
 
   public function create($contest_id)
