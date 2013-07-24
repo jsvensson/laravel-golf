@@ -5,7 +5,10 @@ class ContestEventController extends BaseController
 
   public function index($contest_id)
   {
-    return "Showing events for contest $contest_id";
+    $contest = Contest::findOrFail($contest_id);
+
+    return View::make('contest.event.index')
+      ->with('contest', $contest);
   }
 
   public function show($contest_id, $event_id)
