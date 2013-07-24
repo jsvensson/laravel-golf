@@ -1,5 +1,8 @@
 <?php
 
+// Template to use
+Breadcrumbs::setView('partial/breadcrumbs');
+
 // Base Home breadcrumb
 Breadcrumbs::register('home', function($b) {
   $b->push('Hem', URL::to('/'));
