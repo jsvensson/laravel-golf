@@ -20,7 +20,7 @@
   <div class="control-group">
     <label class="control-label" for="first_name">Beskrivning</label>
     <div class="controls">
-      <input type="text" id="description" name="description" placeholder="Bana 1">
+      <input type="text" id="name" name="name" placeholder="Bana 1">
     </div>
   </div>
 
