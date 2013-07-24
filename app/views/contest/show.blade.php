@@ -8,4 +8,6 @@
 
   <p><a href="{{ route('contest.players.index', $contest->id) }}">Visa {{ $contest->player_count }} deltagare</a></p>
 
+  <p><a href="{{ route('contest.event.create', $contest->id) }}">Skapa event</a></p>
+
 @stop
