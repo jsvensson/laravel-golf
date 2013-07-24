@@ -11,7 +11,7 @@ class Event extends Eloquent
    *
    * @var array
    */
-  protected $fillable = [];
+  protected $fillable = ['contest_id', 'name', 'date'];
 
   /**
    * Contest relationship for the model. An Event belongs to a Contest.
