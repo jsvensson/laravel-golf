@@ -19,18 +19,31 @@ class AuthController extends BaseController {
    */
   public function postLogin()
   {
-    $attempt = Input::only('email', 'password');
+    $val = Validator::make(
+      Input::only('email', 'password'),
+      [
+        'email' => 'required',
+        'password' => 'required'
+      ]
+    );
 
-    if (Sentry::authenticate($attempt)) {
-      // Login success
-      return Redirect::to('/')
-        ->with('flash_notice', 'Inloggning lyckad');
+    if ($val->fails()) {
+      return Redirect::to('auth/login')
+        ->withInput(Input::except('password'))
+        ->withErrors($val);
     }
     else {
-      // Login failure
-      return Redirect::to('auth/login')
-        ->with('flash_error', 'Felaktigt inloggningsförsök.')
-        ->withInput(Input::except('password'));
+      $credentials = Input::only('email', 'password');
+      if (Sentry::authenticate($credentials)) {
+        // Login success
+        return Redirect::to('/')
+          ->with('flash_notice', 'Inloggning lyckad');
+      }
+      else {
+        return Redirect::to('auth/login')
+          ->with('flash_error', 'Felaktigt inloggningsförsök.')
+          ->withInput(Input::except('password'));
+      }
     }
   }
 
