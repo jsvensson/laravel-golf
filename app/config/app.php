@@ -116,6 +116,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
     'Jonob\HTML\HTMLServiceProvider',
     'Cartalyst\Sentry\SentryServiceProvider',
+    'Former\FormerServiceProvider',
   ),
 
 	/*
@@ -160,6 +161,7 @@ return array(
 		'Event'           => 'Illuminate\Support\Facades\Event',
 		'File'            => 'Illuminate\Support\Facades\File',
 		'Form'            => 'Illuminate\Support\Facades\Form',
+		'Former'          => 'Former\Facades\Former',
 		'Hash'            => 'Illuminate\Support\Facades\Hash',
 		//'HTML'            => 'Illuminate\Support\Facades\HTML',
     'HTML'            => 'Jonob\HTML\HTMLFacade',
