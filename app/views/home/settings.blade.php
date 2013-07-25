@@ -20,6 +20,8 @@
   {{ Former::number('profile.handicap')->label('Handikapp') }}
   {{ Former::url('profile.website')->label('Hemsida') }}
 
+  {{ Former::primary_submit()->value('Spara inställningar') }}
+
 {{ Former::close() }}
 
 @stop
