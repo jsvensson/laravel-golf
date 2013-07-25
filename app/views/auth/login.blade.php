@@ -1,24 +1,13 @@
 @extends('layout.default')
 
 @section('content')
-  <h2>Inloggning</h2>
 
-{{ Form::open() }}
+{{ Former::horizontal_open() }}
 
-  <div>
-    {{ Form::label('email', 'Email') }} <br>
-    {{ Form::email('email') }} {{ $errors->first('email') }}
-  </div>
+  {{ Former::email('email')->placeholder('Email') }}
+  {{ Former::password('password')->placeholder('Lösenord') }}
+  {{ Former::large_primary_submit('Logga in') }}
 
-  <div>
-    {{ Form::label('password', 'Lösenord') }} <br>
-    {{ Form::password('password') }} {{ $errors->first('password') }}
-  </div>
-
-  <div>
-    {{ Form::submit('Logga in') }}
-  </div>
-
-{{ Form::close() }}
+{{ Former::close() }}
 
 @stop
