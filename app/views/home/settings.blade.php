@@ -14,7 +14,6 @@
 {{ Former::horizontal_open() }}
 {{ Former::populate($user) }}
 
-  {{ Former::text('id') }}
   {{ Former::text('first_name')->label('Förnamn') }}
   {{ Former::text('last_name')->label('Efternamn') }}
   {{ Former::number('profile.handicap')->label('Handikapp') }}
