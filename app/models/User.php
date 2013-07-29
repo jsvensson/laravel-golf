@@ -36,6 +36,12 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
       ->withPivot('is_active');
   }
 
+  public function events()
+  {
+    return $this->belongsToMany('ContestEvent', 'events_players')
+      ->withPivot('score');
+  }
+
   public static function register($u, $activate = false)
   {
     Log::info('Creating user ' . $u['email'] . ", activate = " . ($activate ? 'true' : 'false'));
