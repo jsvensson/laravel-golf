@@ -14,4 +14,19 @@
 
   <p><a href="{{ route('contest.event.create', $contest->id) }}">Skapa event</a></p>
 
+  <table class="table table-striped table-hover">
+    <tr>
+      <th></th>
+    @foreach($contest->events as $event)
+      <th>{{ $event->name }}</th>
+    @endforeach
+      <th>Summa</th>
+    </tr>
+    <tr>
+    @foreach($contest->players as $player)
+      <td>{{ $player->initial_name }}</td>
+    @endforeach
+    </tr>
+  </table>
+
 @stop
