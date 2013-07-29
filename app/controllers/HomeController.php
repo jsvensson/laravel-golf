@@ -19,16 +19,21 @@ class HomeController extends BaseController {
 
   public function postSettings()
   {
-    $p = Input::only('first_name', 'last_name', 'profile_handicap', 'profile_website');
+    // New first/last name
+    $u = Input::only('first_name', 'last_name');
+    User::currentUser()->update($u);
+
+    // Profile data
+    $p = Input::only('profile_handicap', 'profile_website');
 
     // Rename keys due to Former input
     $p['handicap'] = $p['profile_handicap'];
     unset($p['profile_handicap']);
-
     $p['website'] = $p['profile_website'];
     unset($p['profile_website']);
 
     User::currentUser()->profile->update($p);
+
     return Redirect::to('home/settings');
   }
 
