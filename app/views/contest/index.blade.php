@@ -23,7 +23,7 @@
       <td>{{ $contest->start_date }}</td>
       <td>{{ $contest->end_date }}</td>
       <td><a href="{{ route('player.show', $contest->owner->id) }}">{{ $contest->owner->initial_name }}<a></td>
-      <td>{{ $contest->player_count }}</td>
+      <td>{{ $contest->players->count() }}</td>
       <td>{{ $contest->events->count() }}</td>
     </tr>
 @endforeach

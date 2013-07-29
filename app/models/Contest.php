@@ -42,11 +42,6 @@ class Contest extends Eloquent
     return $this->belongsTo('User');
   }
 
-  public function getPlayerCountAttribute()
-  {
-    return count($this->players);
-  }
-
   public function scopeAvailable($query)
   {
     $owner_id = User::currentId();
