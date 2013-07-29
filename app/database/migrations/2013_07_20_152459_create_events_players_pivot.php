@@ -13,14 +13,14 @@ class CreateEventsPlayersPivot extends Migration {
 	{
 		Schema::create('events_players', function($table)
 		{
-			$table->integer('event_id')
+			$table->integer('contest_event_id')
 				->unsigned();
 			$table->integer('user_id')
 				->unsigned();
 
 			$table->integer('score');
 
-			$table->primary(array('event_id', 'user_id'));
+			$table->primary(array('contest_event_id', 'user_id'));
 		});
 	}
 
