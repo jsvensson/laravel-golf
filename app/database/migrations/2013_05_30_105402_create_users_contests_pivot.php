@@ -15,14 +15,8 @@ class CreateUsersContestsPivot extends Migration {
     {
       $table->integer('contest_id')
         ->unsigned();
-      $table->foreign('contest_id')
-        ->references('id')
-        ->on('contests');
       $table->integer('user_id')
         ->unsigned();
-      $table->foreign('user_id')
-        ->references('id')
-        ->on('users');
       $table->primary(array('user_id', 'contest_id'));
     });
 	}

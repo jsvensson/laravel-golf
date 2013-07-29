@@ -15,19 +15,12 @@ class CreateEventsPlayersPivot extends Migration {
 		{
 			$table->integer('event_id')
 				->unsigned();
-			$table->foreign('event_id')
-			  ->references('id')
-			  ->on('events');
-
-			$table->integer('player_id')
+			$table->integer('user_id')
 				->unsigned();
-			$table->foreign('player_id')
-			  ->references('id')
-			  ->on('users');
 
 			$table->integer('score');
 
-			$table->primary(array('event_id', 'player_id'));
+			$table->primary(array('event_id', 'user_id'));
 		});
 	}
 

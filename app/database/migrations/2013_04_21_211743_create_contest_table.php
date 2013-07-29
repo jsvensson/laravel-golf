@@ -17,9 +17,6 @@ class CreateContestTable extends Migration {
       // Group owner, FK users.id
       $table->integer('owner_id')
         ->unsigned();
-      $table->foreign('owner_id')
-        ->references('id')
-        ->on('users');
 
       // Other data
       $table->string('name');

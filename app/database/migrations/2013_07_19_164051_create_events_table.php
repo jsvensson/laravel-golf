@@ -16,9 +16,6 @@ class CreateEventsTable extends Migration {
       $table->increments('id');
       $table->integer('contest_id')
         ->unsigned();
-      $table->foreign('contest_id')
-        ->references('id')
-        ->on('contests');
       $table->string('name');
     });
 
@@ -28,14 +25,8 @@ class CreateEventsTable extends Migration {
     {
       $table->integer('contest_id')
         ->unsigned();
-      $table->foreign('contest_id')
-        ->references('id')
-        ->on('contests');
       $table->integer('event_id')
         ->unsigned();
-      $table->foreign('event_id')
-        ->references('id')
-        ->on('events');
       $table->primary(array('contest_id', 'event_id'));
     });
   }
