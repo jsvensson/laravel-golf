@@ -14,7 +14,7 @@
 
   <p><a href="{{ route('contest.event.create', $contest->id) }}">Skapa event</a></p>
 
-  <table class="table table-striped table-hover">
+  <table class="table table-condensed table-striped table-hover">
     <tr>
       <th></th>
     @foreach($contest->events as $event)
