@@ -34,6 +34,18 @@ class ContestEvent extends Eloquent
       ->withPivot('score');
   }
 
+  public static function boot()
+  {
+    parent::boot();
+
+    // Attach all contest players to a created event
+    static::created(function($event) {
+      foreach($event->contest->players as $player) {
+        $event->players()->attach($player->id);
+      }
+    });
+  }
+
 }
 
 /* EOF */

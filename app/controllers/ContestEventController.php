@@ -37,12 +37,6 @@ class ContestEventController extends BaseController
     ]);
     $event->save();
 
-    // Attach all players to the event
-    foreach ($contest->players as $player) {
-      // $contest->players()->attach($owner_id, ['is_active' => true]);
-      $event->players()->attach($player->id);
-    }
-
     return Redirect::route('contest.event.show', [$contest->id, $event->id]);
   }
 
