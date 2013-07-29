@@ -28,9 +28,10 @@
       </ul>
   </div>
 
-  <div class="span4"></div>
+  <div class="span4"><h4>Senaste aktiviteter</h4></div>
 
   <div class="span4">
+    <h4>Statistik</h4>
     <ul>
       <li>Users: {{ $count['users'] }}</li>
       <li>Contests: {{ $count['contests'] }}</li>
