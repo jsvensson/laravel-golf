@@ -15,6 +15,7 @@
       <th>Stänger</th>
       <th>Skapare</th>
       <th>Deltagare</th>
+      <th>Events</th>
     </tr>
 @foreach ($contests as $contest)
     <tr>
@@ -23,6 +24,7 @@
       <td>{{ $contest->end_date }}</td>
       <td><a href="{{ route('player.show', $contest->owner->id) }}">{{ $contest->owner->initial_name }}<a></td>
       <td>{{ $contest->player_count }}</td>
+      <td>{{ $contest->events->count() }}</td>
     </tr>
 @endforeach
   </table>
