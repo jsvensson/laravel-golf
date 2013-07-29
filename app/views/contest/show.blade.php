@@ -22,11 +22,15 @@
     @endforeach
       <th>Summa</th>
     </tr>
-    <tr>
     @foreach($contest->players as $player)
+    <tr>
       <td>{{ $player->initial_name }}</td>
-    @endforeach
+      @foreach($player->eventsForContest($contest->id)->get() as $event)
+        <td class="contest score">{{ ($event->pivot->score != '') ? $event->pivot->score : '<span class="contest no-score">&mdash;</span>' }}</td>
+      @endforeach
+      <td class="contest score-sum">{{ $player->scoreForContest($contest->id) }}</td>
     </tr>
+    @endforeach
   </table>
 
 @stop
