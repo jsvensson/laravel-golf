@@ -1,2 +1,7 @@
 body {
   padding-top: 60px; }
+
+.contest.score-sum {
+  font-weight: bold; }
+.contest.no-score {
+  color: #cccccc; }
