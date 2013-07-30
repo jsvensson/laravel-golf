@@ -40,10 +40,4 @@
   </div>
 </div>
 
-<div class="row">
-  @foreach(User::all() as $user)
-    {{ $user->email }}
-  @endforeach
-</div>
-
 @stop
