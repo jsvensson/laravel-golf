@@ -54,7 +54,7 @@ class HomeController extends BaseController {
     $val = Validator::make($e, $rules);
 
     if ($val->fails()) {
-      return Redirect::to('home/email')
+      return Redirect::back()
         ->withInput(Input::only('email'))
         ->withErrors($val);
     }
@@ -89,7 +89,7 @@ class HomeController extends BaseController {
     $val = Validator::make($e, $rules);
 
     if ($val->fails()) {
-      return Redirect::to('home/password')
+      return Redirect::back()
         ->withInput(Input::all())
         ->withErrors($val);
     }

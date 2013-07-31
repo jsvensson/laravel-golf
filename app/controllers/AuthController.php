@@ -28,7 +28,7 @@ class AuthController extends BaseController {
     );
 
     if ($val->fails()) {
-      return Redirect::to('auth/login')
+      return Redirect::back()
         ->withInput(Input::except('password'))
         ->withErrors($val);
     }
@@ -40,7 +40,7 @@ class AuthController extends BaseController {
           ->with('flash_notice', 'Inloggning lyckad');
       }
       else {
-        return Redirect::to('auth/login')
+        return Redirect::back()
           ->with('flash_error', 'Felaktigt inloggningsförsök.')
           ->withInput(Input::except('password'));
       }
