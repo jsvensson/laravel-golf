@@ -3,31 +3,21 @@
 @section('content')
   <h2>Skapa ny tävling</h2>
 
-  {{ Form::open(['route' => 'contest.store']) }}
+  {{ Former::open()->action(URL::route('contest.store')) }}
+  {{ Former::text('name')
+      ->label('Tävlingens namn')
+      ->placeholder('Namn') }}
 
-  {{ Form::label('name', 'Tävlingens namn') }}
-  {{ Form::text('name', false, ['placeholder' => 'Namn']) }} {{ $errors->first('name') }}
+  {{ Former::date('start_date')
+      ->label('Startdatum')
+      ->placeholder('2013-08-01') }}
 
-  {{ Form::label('start_date', 'Startdatum') }}
-  {{ Form::text('start_date', false, ['placeholder' => '2013-05-27']) }} {{ $errors->first('start_date') }}
+  {{ Former::date('end_date')
+      ->label('Slutdatum')
+      ->placeholder('2013-08-01') }}
 
-  {{ Form::label('end_date', 'Slutdatum') }}
-  {{ Form::text('end_date', false, ['placeholder' => '2013-05-27']) }} {{ $errors->first('end_date') }}
-
-  <br>
-
-  {{ Form::submit('Skapa ny tävling') }}
-
-  {{ Form::hidden('owner_id', $user->id) }}
-  {{ Form::token() }}
-  {{ Form::close() }}
-
-  <h3>Att fixa</h3>
-  <ul>
-    <li>Bootstrapifiera HTML</li>
-    <li>Datepicker för start/slutdatum</li>
-    <li>Efter skapande, skicka till sida för att lägga till spelare</li>
-  </ul>
-
+  {{ Former::large_primary_submit('Skapa tävling') }}
+  {{ Former::hidden('owner_id', $user->id) }}
+  {{ Former::close() }}
 
 @stop
