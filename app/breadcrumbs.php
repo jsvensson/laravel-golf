@@ -22,7 +22,7 @@ Breadcrumbs::register('contest', function($b, $contest) {
 
 // contest.players.index breadcrumb
 Breadcrumbs::register('players', function($b, $contest) {
-  $b->parent('contests');
+  $b->parent('contest', $contest);
   $b->push('Spelare', route('contest.players.index', $contest->id));
 });
 
