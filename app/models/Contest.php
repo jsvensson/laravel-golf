@@ -6,6 +6,11 @@ class Contest extends Eloquent
   public $timestamps = true;
 
   /**
+   * The attributes for any model validation errors.
+   */
+  protected $validation = null;
+
+  /**
    * The attributes included in the model's JSON form.
    *
    * @var array
@@ -48,6 +53,11 @@ class Contest extends Eloquent
 
     return $query->where('is_open', true)
       ->orWhere('owner_id', $owner_id);
+  }
+
+  public function getValidatorMessages()
+  {
+    return $this->validation;
   }
 
 }
