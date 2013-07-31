@@ -55,6 +55,24 @@ class Contest extends Eloquent
       ->orWhere('owner_id', $owner_id);
   }
 
+  public function isValid()
+  {
+    $val = Validator::make(
+      $this->toArray(),
+      [
+        'name'       => 'required',
+        'start_date' => 'required|date_format:Y-m-d|before:' . Input::get('end_date'),
+        'end_date'   => 'required|date_format:Y-m-d|after:' . Input::get('start_date'),
+      ]
+    );
+
+    if ($val->fails()) {
+      $this->validation = $val->messages();
+    }
+
+    return $val->passes();
+  }
+
   public function getValidatorMessages()
   {
     return $this->validation;
