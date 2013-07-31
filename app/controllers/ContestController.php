@@ -33,35 +33,17 @@ class ContestController extends BaseController
    */
   public function store()
   {
-    $val = Validator::make(
-      Input::all(),
-      [
-        'name'       => 'required',
-        'start_date' => 'required|date_format:Y-m-d|before:' . Input::get('end_date'),
-        'end_date'   => 'required|date_format:Y-m-d|after:' . Input::get('start_date'),
-      ]
-    );
+    $contest = new Contest(Input::all());
 
-    if ($val->fails()) {
-      return Redirect::to('contest/create')
-        ->withInput(Input::all())
-        ->withErrors($val);
+    // Validation
+    if ( ! $contest->save()) {
+      return Redirect::back()
+        ->withInput()
+        ->withErrors($contest->getValidatorMessages());
     }
     else {
-      // Validation passed, create contest
-      $owner_id = User::currentId();
-      $c = [
-        'owner_id'   => $owner_id,
-        'name'       => Input::get('name'),
-        'start_date' => Input::get('start_date'),
-        'end_date'   => Input::get('end_date')
-      ];
-
-      $contest = new Contest($c);
-      $contest->save();
-
       // Attach and activate owner
-      $contest->players()->attach($owner_id, ['is_active' => true]);
+      $contest->players()->attach(User::currentId(), ['is_active' => true]);
 
       return Redirect::route('contest.show', $contest->id);
     }
