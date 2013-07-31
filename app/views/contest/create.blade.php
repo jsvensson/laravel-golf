@@ -18,6 +18,7 @@
 
   {{ Form::submit('Skapa ny tävling') }}
 
+  {{ Form::hidden('owner_id', $user->id) }}
   {{ Form::token() }}
   {{ Form::close() }}
 
