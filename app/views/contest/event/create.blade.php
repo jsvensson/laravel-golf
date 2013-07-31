@@ -8,30 +8,21 @@
 
   <p>TODO: funktion för att automatiskt skapa events för ett angivet antal banor.</p>
 
-  {{ Form::open(['route' => ['contest.event.store', $contest->id], 'class' => 'form-horizontal']) }}
+  {{ Former::horizontal_open()
+       ->action(URL::route('contest.event.store', $contest->id)) }}
 
-  <div class="control-group">
-    <label class="control-label" for="first_name">Datum</label>
-    <div class="controls">
-      <input type="text" id="date" name="date" placeholder="{{ $contest->start_date }}" value="{{ $contest->start_date }}">
-    </div>
-  </div>
+    {{ Former::date('date')
+         ->label('Datum')
+         ->placeholder($contest->start_date)
+         ->value($contest->start_date)  }}
 
-  <div class="control-group">
-    <label class="control-label" for="first_name">Beskrivning</label>
-    <div class="controls">
-      <input type="text" id="name" name="name" placeholder="Bana 1">
-    </div>
-  </div>
+    {{ Former::text('name')
+         ->label('Beskrivning')
+         ->placeholder('Bana 1') }}
 
-  <div class="control-group">
-    <div class="controls">
-      <button type="submit" class="btn">Skapa event</button>
-    </div>
-  </div>
+    {{ Former::large_primary_submit('Skapa event') }}
 
-
-  {{ Form::close() }}
+  {{ Former::close() }}
 
   <a href="{{ URL::route('contest.show', $contest->id) }}">Tillbaka till tävling</a>
 
