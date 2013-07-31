@@ -17,6 +17,18 @@ class Contest extends Eloquent
    */
   protected $fillable = ['owner_id', 'name', 'start_date', 'end_date'];
 
+  public static function boot()
+  {
+    static::creating(function($contest) {
+      if ( ! $contest->isValid()) return false;
+    });
+
+    static::updating(function($contest) {
+      if ( ! $contest->isValid()) return false;
+    });
+
+  }
+
   /**
    * Event relationship for the model.
    *
