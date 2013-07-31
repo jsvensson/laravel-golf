@@ -14,6 +14,11 @@
   Route::controller('auth', 'AuthController');
 
   /*
+   * Authorization required for all 'create' routes
+   */
+  Route::when('*/create', 'auth');
+
+  /*
    * Home controller
    */
   Route::controller('home', 'HomeController');
@@ -26,7 +31,6 @@
   /*
    * Contest controller (resource)
    */
-  Route::when('contest/create', 'auth');
   Route::resource('contest', 'ContestController');
   Route::resource('contest.players', 'ContestPlayerController', ['only' => ['index', 'show']]);
   Route::resource('contest.event', 'ContestEventController');
