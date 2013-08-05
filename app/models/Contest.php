@@ -64,7 +64,8 @@ class Contest extends Eloquent
     $owner_id = User::currentId();
 
     return $query->where('is_open', true)
-      ->orWhere('owner_id', $owner_id);
+      ->orWhere('owner_id', $owner_id)
+      ->with('owner', 'events', 'players');
   }
 
   public function isValid()
