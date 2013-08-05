@@ -2,7 +2,7 @@
 
 @section('content')
 
-  {{ Breadcrumbs::render('contests') }}
+  {{ Breadcrumbs::render('contest.index') }}
 
   <h2>Aktiva tävlingar</h2>
 

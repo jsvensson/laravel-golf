@@ -2,7 +2,7 @@
 
 @section('content')
 
-  {{ Breadcrumbs::render('players', $contest) }}
+  {{ Breadcrumbs::render('contest.player.index', $contest) }}
 
   <h2>Deltagare i tävling {{ $contest->id }}</h2>
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-  {{ Breadcrumbs::render('add_players', $contest) }}
+  {{ Breadcrumbs::render('contest.player.create', $contest) }}
 
   <h2>Lägg till spelare till tävling</h2>
 
