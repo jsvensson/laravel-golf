@@ -63,7 +63,7 @@ class Contest extends Eloquent
   {
     $owner_id = User::currentId();
 
-    return $query->where('is_open', true)
+    return $query->where('is_public', true)
       ->orWhere('owner_id', $owner_id)
       ->with('owner', 'events', 'players');
   }
