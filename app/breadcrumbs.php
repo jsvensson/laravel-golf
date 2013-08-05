@@ -28,7 +28,7 @@ Breadcrumbs::register('contest.player.index', function($b, $contest) {
 
 // contest.player.create breadcrumb
 Breadcrumbs::register('contest.player.create', function($b, $contest) {
-  $b->parent('contest.player.index');
+  $b->parent('contest.player.index', $contest);
   $b->push('Lägg till spelare', route('contest.player.create', $contest->id));
 });
 
