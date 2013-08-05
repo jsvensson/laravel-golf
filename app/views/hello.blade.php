@@ -13,12 +13,12 @@
 
 <div class="row">
   <div class="span4">
-    @if(isset($user))
+    @if( ! empty($user))
       <p>Inloggad som {{ $user->full_name }}</p>
     @endif
 
       <ul>
-      @if(isset($user))
+      @if( ! empty($user))
         <li>{{ HTML::link('auth/logout', 'Logga ut') }}</li>
       @else
         <li>{{ HTML::link('auth/signup', 'Registrera konto') }}</li>
