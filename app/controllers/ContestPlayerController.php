@@ -18,8 +18,10 @@ class ContestPlayerController extends BaseController {
   public function create($contest_id)
   {
     $contest = Contest::findOrFail($contest_id);
+    $nonmembers = User::nonMembersOfContest($contest_id);
 
     return View::make('contest.player.create')
+      ->with('nonmembers', $nonmembers)
       ->with('contest', $contest);
   }
 
