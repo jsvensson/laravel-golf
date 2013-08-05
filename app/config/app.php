@@ -116,6 +116,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
     'Cartalyst\Sentry\SentryServiceProvider',
     'Former\FormerServiceProvider',
+    'Juy\Profiler\Providers\ProfilerServiceProvider',
   ),
 
 	/*
@@ -169,6 +170,7 @@ return array(
 		'Mail'            => 'Illuminate\Support\Facades\Mail',
 		'Paginator'       => 'Illuminate\Support\Facades\Paginator',
 		'Password'        => 'Illuminate\Support\Facades\Password',
+		'Profiler'        => 'Juy\Profiler\Facades\Profiler',
 		'Queue'           => 'Illuminate\Support\Facades\Queue',
 		'Redirect'        => 'Illuminate\Support\Facades\Redirect',
 		'Redis'           => 'Illuminate\Support\Facades\Redis',

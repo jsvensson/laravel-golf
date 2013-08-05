@@ -6,7 +6,8 @@
 		"cartalyst/sentry": "2.0.*",
 		"fideloper/proxy": "dev-master",
 		"davejamesmiller/laravel-breadcrumbs": "dev-master",
-		"anahkiasen/former": "dev-master"
+		"anahkiasen/former": "dev-master",
+		"juy/profiler": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
