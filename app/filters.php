@@ -13,7 +13,8 @@
 
 App::before(function($request)
 {
-	//
+  // Set up global user object for views
+  View::share('user', User::currentUser());
 });
 
 
