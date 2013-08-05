@@ -6,9 +6,11 @@
 
   <h2>{{ $contest->name }}</h2>
 
-  <p>Skapare: <a href="{{ route('contest.players.show', [$contest->id, $contest->owner->id]) }}">{{ $contest->owner->full_name }}</a></p>
+  <p>Skapare: <a href="{{ route('contest.player.show', [$contest->id, $contest->owner->id]) }}">{{ $contest->owner->full_name }}</a></p>
 
-  <p><a href="{{ route('contest.players.index', $contest->id) }}">Visa {{ $contest->players->count() }} deltagare</a></p>
+  <p><a href="{{ route('contest.player.index', $contest->id) }}">Visa {{ $contest->players->count() }} deltagare</a></p>
+
+  <p><a href="{{ route('contest.player.create', $contest->id) }}">Lägg till spelare</a></p>
 
   <p><a href="{{ URL::route('contest.event.index', $contest->id) }}">Visa {{ $contest->events->count() }} events</a></p>
 

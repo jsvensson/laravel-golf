@@ -11,7 +11,7 @@ class ContestPlayerController extends BaseController {
 	{
     $contest = Contest::findOrFail($contest_id);
 
-    return View::make('contest.players.index')
+    return View::make('contest.player.index')
       ->with('contest', $contest);
 	}
 
@@ -19,7 +19,7 @@ class ContestPlayerController extends BaseController {
   {
     $contest = Contest::findOrFail($contest_id);
 
-    return View::make('contest.players.create')
+    return View::make('contest.player.create')
       ->with('contest', $contest);
   }
 

@@ -8,7 +8,7 @@
 
   <ul>
   @foreach ($contest->players as $player)
-    <li><a href="{{ URL::route('contest.players.show', [$contest->id, $player->id]) }}">{{ $player->full_name }}</a></li>
+    <li><a href="{{ URL::route('contest.player.show', [$contest->id, $player->id]) }}">{{ $player->full_name }}</a></li>
   @endforeach
   </ul>
 
