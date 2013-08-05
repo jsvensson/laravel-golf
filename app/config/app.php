@@ -79,8 +79,6 @@ return array(
 	*/
 
 	'providers' => array(
-		'DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider',
-		'Fideloper\Proxy\ProxyServiceProvider',
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
@@ -117,6 +115,8 @@ return array(
     'Cartalyst\Sentry\SentryServiceProvider',
     'Former\FormerServiceProvider',
     'Juy\Profiler\Providers\ProfilerServiceProvider',
+ 		'DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider',
+		'Fideloper\Proxy\ProxyServiceProvider',
   ),
 
 	/*
