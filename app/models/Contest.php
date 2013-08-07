@@ -59,6 +59,12 @@ class Contest extends Eloquent
     return $this->belongsTo('User');
   }
 
+  public function nonPlayers()
+  {
+    $members = $this->players()->lists('user_id');
+    return User::whereNotIn('id', $members)->get();
+  }
+
   public function scopeAvailable($query)
   {
     $owner_id = User::currentId();

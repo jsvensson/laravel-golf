@@ -42,12 +42,6 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
       ->withPivot('score');
   }
 
-  public static function nonMembersOfContest($contest_id)
-  {
-    $members = Contest::find($contest_id)->players()->lists('user_id');
-    return User::whereNotIn('id', $members)->get();
-  }
-
   public function eventsForContest($contest_id)
   {
     return $this->events()
