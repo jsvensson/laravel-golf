@@ -80,7 +80,7 @@ class Contest extends Eloquent
       $this->toArray(),
       [
         'name'       => 'required',
-        'owner_id'   => 'required|size:' . User::currentId(),
+        'owner_id'   => 'required|integer|size:' . User::currentId(),
         'start_date' => 'required|date_format:Y-m-d|before:' . Input::get('end_date'),
         'end_date'   => 'required|date_format:Y-m-d|after:' . Input::get('start_date'),
       ]
