@@ -2,7 +2,7 @@
 
 @section('content')
 
-  {{ Breadcrumbs::render('event', $event) }}
+  {{ Breadcrumbs::render('contest.event.show', $event) }}
 
   <h2>{{ $event->name }}</h2>
 

@@ -2,6 +2,8 @@
 
 @section('content')
 
+  {{ Breadcrumbs::render('contest.event.create', $contest) }}
+
   <h2>Skapa event för {{ $contest->name }}</h2>
 
   <p>En event samlar deltagarnas resultat för tex en bana eller en dags spelande.</p>
