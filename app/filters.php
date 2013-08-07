@@ -36,7 +36,7 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if (empty($user)) return Redirect::to('auth/login');
+	if ( ! User::currentUser()) return Redirect::to('auth/login');
 });
 
 
