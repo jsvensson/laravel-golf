@@ -67,11 +67,18 @@ class Contest extends Eloquent
 
   public function scopeAvailable($query)
   {
-    $owner_id = User::currentId();
+    $user = User::currentUser();
 
-    return $query->where('is_public', true)
-      ->orWhere('owner_id', $owner_id)
+    $query->where('is_public', true)
       ->with('owner', 'events', 'players');
+
+    // Check when logged in
+    if($user) {
+      $query->orWhere('owner_id', $user->id)
+        ->orWhereIn('id', $user->contests()->lists('contest_id'));
+    }
+
+    return $query;
   }
 
   public function isValid()
