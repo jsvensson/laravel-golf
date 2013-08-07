@@ -9,7 +9,7 @@
   {{ Former::horizontal_open()
        ->action(URL::route('contest.player.store', $contest->id)) }}
 
-  @foreach($nonmembers as $player)
+  @foreach($nonplayers as $player)
     {{ Former::checkbox($player->id)
          ->label(null)
          ->text($player->full_name) }}
