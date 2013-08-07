@@ -43,3 +43,10 @@ Breadcrumbs::register('contest.event.show', function($b, $event) {
   $b->parent('contest.event.index', $event->contest);
   $b->push($event->name, route('contest.event.show', [$event->contest->id, $event->id]));
 });
+
+// contest.event.create breadcrumb
+Breadcrumbs::register('contest.event.create', function($b, $contest) {
+  $b->parent('contest.show', $contest);
+  $b->push('Skapa event', route('contest.event.create', [$contest->id]));
+});
+
