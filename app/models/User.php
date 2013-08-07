@@ -44,9 +44,8 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
 
   public static function nonMembersOfContest($contest_id)
   {
-    return User::whereNotIn('contests.id', [$contest_id])
-      ->join('contests', 'users.id', '=', 'contests.id')
-      ->get();
+    $members = Contest::find($contest_id)->players()->lists('user_id');
+    return User::whereNotIn('id', $members)->get();
   }
 
   public function eventsForContest($contest_id)
