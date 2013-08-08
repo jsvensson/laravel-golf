@@ -10,9 +10,11 @@
        ->action(URL::route('contest.player.store', $contest->id)) }}
 
   @foreach($nonplayers as $player)
-    {{ Former::checkbox($player->id)
-         ->label(null)
-         ->text($player->full_name) }}
+    {{ Former::checkbox('users[]')
+        ->id("user_$player->id")
+        ->value($player->id)
+        ->label(null)
+        ->text($player->full_name) }}
   @endforeach
 
   {{ Former::primary_large_submit()->value('Lägg till') }}

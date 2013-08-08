@@ -29,14 +29,8 @@ class ContestPlayerController extends BaseController {
   {
     $contest = Contest::findOrFail($contest_id);
 
-    // Get integers out of the input while screaming in horror at this piece of code
-    $keys = [];
-    foreach(array_keys(Input::all()) as $arr) {
-      if (is_int($arr)) { $keys[] = $arr; }
-    }
-
     // Attach players to contest
-    foreach($keys as $player_id) {
+    foreach(Input::get('users') as $player_id) {
       $contest->players()->attach($player_id, ['is_active' => true]);
 
       // Attach all contest events to player
