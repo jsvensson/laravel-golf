@@ -6,15 +6,14 @@
 
   <h2>{{ $contest->name }}</h2>
 
-  <p>Skapare: <a href="{{ route('contest.player.show', [$contest->id, $contest->owner->id]) }}">{{ $contest->owner->full_name }}</a></p>
+  <ul>
+  <li>Skapare: <a href="{{ route('contest.player.show', [$contest->id, $contest->owner->id]) }}">{{ $contest->owner->full_name }}</a></li>
 
-  <p><a href="{{ route('contest.player.index', $contest->id) }}">Visa {{ $contest->players->count() }} deltagare</a></p>
-
-  <p><a href="{{ route('contest.player.create', $contest->id) }}">Lägg till spelare</a></p>
-
-  <p><a href="{{ URL::route('contest.event.index', $contest->id) }}">Visa {{ $contest->events->count() }} events</a></p>
-
-  <p><a href="{{ route('contest.event.create', $contest->id) }}">Skapa event</a></p>
+  <li><a href="{{ route('contest.player.index', $contest->id) }}">Visa {{ $contest->players->count() }} deltagare</a></li>
+  <li><a href="{{ route('contest.player.create', $contest->id) }}">Lägg till spelare</a></li>
+  <li><a href="{{ URL::route('contest.event.index', $contest->id) }}">Visa {{ $contest->events->count() }} events</a></li>
+  <li><a href="{{ route('contest.event.create', $contest->id) }}">Skapa event</a></li>
+  </ul>
 
   <table class="table table-condensed table-striped table-hover">
     <tr>
