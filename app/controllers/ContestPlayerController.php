@@ -51,9 +51,11 @@ class ContestPlayerController extends BaseController {
   {
     $contest = Contest::findOrFail($contest_id);
     $player  = User::findOrFail($player_id);
+    $events  = $player->eventsForContest($contest->id)->get();
 
     return View::make('contest.player.edit')
       ->with('contest', $contest)
+      ->with('events', $events)
       ->with('player', $player);
   }
 
