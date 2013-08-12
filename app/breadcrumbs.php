@@ -32,6 +32,12 @@ Breadcrumbs::register('contest.player.create', function($b, $contest) {
   $b->push('Lägg till spelare', route('contest.player.create', $contest->id));
 });
 
+// contest.player.edit breadcrumb
+Breadcrumbs::register('contest.player.edit', function($b, $contest, $player) {
+  $b->parent('contest.show', $contest);
+  $b->push('Redigera spelar-events', route('contest.player.edit', [$contest->id, $player->id]));
+});
+
 // contest.event.index breadcrumb
 Breadcrumbs::register('contest.event.index', function($b, $contest) {
   $b->parent('contest.show', $contest);
