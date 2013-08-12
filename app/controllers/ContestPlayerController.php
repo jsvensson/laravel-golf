@@ -47,6 +47,16 @@ class ContestPlayerController extends BaseController {
     return "TODO: Show contest $contest_id results for player $player_id";
   }
 
+  public function edit($contest_id, $player_id)
+  {
+    $contest = Contest::findOrFail($contest_id);
+    $player  = User::findOrFail($player_id);
+
+    return View::make('contest.player.edit')
+      ->with('contest', $contest)
+      ->with('player', $player);
+  }
+
 }
 
 /* EOF */
