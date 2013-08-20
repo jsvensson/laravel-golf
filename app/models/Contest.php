@@ -36,8 +36,7 @@ class Contest extends Eloquent
    */
   public function events()
   {
-    return $this->hasMany('ContestEvent', 'events_players')
-      ->withPivot('score');
+    return $this->hasMany('ContestEvent');
   }
 
   /**
