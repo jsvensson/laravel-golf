@@ -52,7 +52,10 @@ class ContestController extends BaseController
   public function show($contest_id)
   {
     $contest = Contest::findOrFail($contest_id);
+    $is_owner = ($contest->owner_id == User::currentId());
+
     return View::make('contest.show')
+      ->with('is_owner', $is_owner)
       ->with('contest', $contest);
   }
 
