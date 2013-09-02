@@ -56,6 +56,13 @@ class ContestController extends BaseController
       ->with('contest', $contest);
   }
 
+  public function edit($contest_id)
+  {
+    $contest = Contest::findOrFail($contest_id);
+    return View::make('contest.edit')
+      ->with('contest', $contest);
+  }
+
 }
 
 /* EOF */

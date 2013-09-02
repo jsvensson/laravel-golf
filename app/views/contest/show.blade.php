@@ -14,6 +14,7 @@
   <li><a href="{{ URL::route('contest.event.index', $contest->id) }}">Visa {{ $contest->events->count() }} events</a></li>
   <li><a href="{{ route('contest.event.create', $contest->id) }}">Skapa event</a></li>
   <li><a href="{{ route('contest.player.edit', [$contest->id, $user->id]) }}">Redigera mina events</a></li>
+  <li><a href="{{ route('contest.edit', $contest->id) }}">Redigera tävling</a></li>
   </ul>
 
   <table class="table table-condensed table-striped table-hover">
