@@ -59,6 +59,18 @@ class ContestPlayerController extends BaseController {
       ->with('player', $player);
   }
 
+  public function update($contest_id, $player_id)
+  {
+    $contest = Contest::findOrFail($contest_id);
+    $player = User::findOrFail($player_id);
+
+    $scores = Input::get('events');
+
+    $player->events()->sync($scores, false);
+
+    return Input::get('events');
+  }
+
 }
 
 /* EOF */
