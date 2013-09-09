@@ -34,9 +34,9 @@
     </tr>
     @foreach($contest->players as $player)
     <tr>
-      <td>{{ $player->initial_name }}</td>
+      <td class="contest contest-player">{{ $player->initial_name }}</td>
       @foreach($player->eventsForContest($contest->id)->get() as $event)
-        <td class="contest score">{{ ($event->pivot->score != '') ? $event->pivot->score : '<span class="contest no-score">&mdash;</span>' }}</td>
+        <td class="contest contest-score">{{ ($event->pivot->score != '') ? $event->pivot->score : '<span class="contest no-score">&mdash;</span>' }}</td>
       @endforeach
       <td class="contest score-sum">{{ $player->scoreForContest($contest->id) }}</td>
     </tr>
