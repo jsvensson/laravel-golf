@@ -107,6 +107,16 @@ class Contest extends Eloquent
     return $this->validation;
   }
 
+  public function getIsPublicAttribute($value)
+  {
+    return (bool) $value;
+  }
+
+  public function getIsFinishedAttribute($value)
+  {
+    return (bool) $value;
+  }
+
 }
 
 
