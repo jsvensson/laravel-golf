@@ -20,6 +20,12 @@ Breadcrumbs::register('contest.show', function($b, $contest) {
   $b->push($contest->name, route('contest.show', $contest->id));
 });
 
+// contest.edit breadcrumb
+Breadcrumbs::register('contest.edit', function($b, $contest) {
+  $b->parent('contest.show', $contest);
+  $b->push('Redigera', route('contest.edit', $contest->id));
+});
+
 // contest.player.index breadcrumb
 Breadcrumbs::register('contest.player.index', function($b, $contest) {
   $b->parent('contest.show', $contest);
