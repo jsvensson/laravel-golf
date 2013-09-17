@@ -66,6 +66,14 @@ class ContestController extends BaseController
       ->with('contest', $contest);
   }
 
+  public function update($contest_id)
+  {
+    $contest = Contest::findOrFail($contest_id);
+    $contest->update(Input::all());
+
+    return Redirect::route('contest.show', $contest->id);
+  }
+
 }
 
 /* EOF */
