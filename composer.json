@@ -8,7 +8,7 @@
 		"fideloper/proxy": "dev-master",
 		"davejamesmiller/laravel-breadcrumbs": "dev-master",
 		"anahkiasen/former": "dev-master",
-		"juy/profiler": "dev-master"
+		"barryvdh/laravel-debugbar": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
@@ -28,6 +28,7 @@
 			"php artisan clear-compiled"
 		],
 		"post-update-cmd": [
+			"php artisan debugbar:publish",
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
