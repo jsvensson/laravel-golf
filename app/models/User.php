@@ -88,18 +88,13 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
 
   public static function currentUser()
   {
-    if (Sentry::getUser()) {
-      return User::find(Sentry::getUser()->id);
-    }
-    else {
-      return false;
-    }
+    return Sentry::getUser();
   }
 
   public static function currentId()
   {
-    if (User::currentUser()) {
-      return User::currentUser()->id;
+    if ($u = User::currentUser()) {
+      return $u->id;
     }
     else {
       return false;
