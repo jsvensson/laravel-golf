@@ -115,7 +115,7 @@ return array(
     'Cartalyst\Sentry\SentryServiceProvider',
     'Former\FormerServiceProvider',
     'Juy\Profiler\Providers\ProfilerServiceProvider',
- 		'DaveJamesMiller\Breadcrumbs\BreadcrumbsServiceProvider',
+ 		'DaveJamesMiller\Breadcrumbs\ServiceProvider',
 		'Fideloper\Proxy\ProxyServiceProvider',
   ),
 
@@ -149,7 +149,7 @@ return array(
 		'Artisan'         => 'Illuminate\Support\Facades\Artisan',
 		'Auth'            => 'Illuminate\Support\Facades\Auth',
 		'Blade'           => 'Illuminate\Support\Facades\Blade',
-		'Breadcrumbs'     => 'DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs',
+		'Breadcrumbs'     => 'DaveJamesMiller\Breadcrumbs\Facade',
 		'Cache'           => 'Illuminate\Support\Facades\Cache',
 		'ClassLoader'     => 'Illuminate\Support\ClassLoader',
 		'Config'          => 'Illuminate\Support\Facades\Config',
