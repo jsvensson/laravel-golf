@@ -67,7 +67,7 @@ class Contest extends Eloquent
 
   public function scopeAvailable($query)
   {
-    $user = User::currentUser();
+    $user = User::getUser();
 
     $query->where('is_public', true)
       ->with('owner', 'events', 'players');

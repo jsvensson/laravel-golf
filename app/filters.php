@@ -14,7 +14,7 @@
 App::before(function($request)
 {
   // Set up global user object for views
-  View::share('user', User::currentUser());
+  View::share('user', User::getUser());
 });
 
 
@@ -36,7 +36,7 @@ App::after(function($request, $response)
 
 Route::filter('auth', function()
 {
-	if ( ! User::currentUser()) return Redirect::to('auth/login');
+	if ( ! User::getUser()) return Redirect::to('auth/login');
 });
 
 

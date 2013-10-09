@@ -21,7 +21,7 @@ class HomeController extends BaseController {
   {
     // New first/last name
     $u = Input::only('first_name', 'last_name');
-    User::currentUser()->update($u);
+    User::getUser()->update($u);
 
     // Profile data
     $p = Input::only('profile_handicap', 'profile_website');
@@ -32,7 +32,7 @@ class HomeController extends BaseController {
     $p['website'] = $p['profile_website'];
     unset($p['profile_website']);
 
-    User::currentUser()->profile->update($p);
+    User::getUser()->profile->update($p);
 
     return Redirect::to('home/settings');
   }
@@ -59,7 +59,7 @@ class HomeController extends BaseController {
         ->withErrors($val);
     }
     else {
-      $user = User::currentUser();
+      $user = User::getUser();
       $user->email = $e['email'];
       $user->save();
 
@@ -94,7 +94,7 @@ class HomeController extends BaseController {
         ->withErrors($val);
     }
     else {
-      $user = User::currentUser();
+      $user = User::getUser();
       $user->password = Input::get('new_password');
       $user->save();
 
