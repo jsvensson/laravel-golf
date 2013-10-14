@@ -30,6 +30,7 @@
 			"php artisan clear-compiled"
 		],
 		"post-update-cmd": [
+		  "php artisan asset:publish patricktalmadge/bootstrapper",
 			"php artisan debugbar:publish",
 			"php artisan optimize"
 		],
