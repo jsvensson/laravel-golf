@@ -118,6 +118,7 @@ return array(
  		'DaveJamesMiller\Breadcrumbs\ServiceProvider',
 		'Fideloper\Proxy\ProxyServiceProvider',
 		'Basset\BassetServiceProvider',
+		'Bootstrapper\BootstrapperServiceProvider',
   ),
 
 	/*

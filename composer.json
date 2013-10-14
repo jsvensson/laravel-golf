@@ -9,6 +9,7 @@
 		"davejamesmiller/laravel-breadcrumbs": "dev-master",
 		"anahkiasen/former": "dev-master",
 		"jasonlewis/basset": "dev-master",
+		"patricktalmadge/bootstrapper": "dev-develop",
 		"barryvdh/laravel-debugbar": "dev-master"
 	},
 	"autoload": {
