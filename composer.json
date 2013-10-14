@@ -8,6 +8,7 @@
 		"fideloper/proxy": "dev-master",
 		"davejamesmiller/laravel-breadcrumbs": "dev-master",
 		"anahkiasen/former": "dev-master",
+		"jasonlewis/basset": "dev-master",
 		"barryvdh/laravel-debugbar": "dev-master"
 	},
 	"autoload": {
