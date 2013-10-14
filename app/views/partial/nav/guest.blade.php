@@ -1,9 +1,13 @@
 {{ Former::open()
     ->action(URL::to('auth/login'))
-    ->class('navbar-form pull-right') }}
+    ->class('navbar-form navbar-right') }}
 
-  <input class="span2" type="email" name="email" placeholder="Email">
-  <input class="span2" type="password" name="password" placeholder="Lösenord">
-  <button type="submit" class="btn">Logga in</button>
+  <div class="form-group">
+    <input type="text" name="email" placeholder="Email" class="form-control">
+  </div>
+  <div class="form-group">
+    <input type="password" name="password" placeholder="Lösenord" class="form-control">
+  </div>
+  <button type="submit" class="btn btn-success">Logga in</button>
 
 {{ Former::close() }}
