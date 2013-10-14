@@ -204,8 +204,6 @@ return array(
                 $filter->whenAssetIs('.*\.scss')->findMissingConstructorArgs();
             }),
 
-
-
             /*
             |--------------------------------------------------------------------------
             | CoffeeScript Filter Alias
