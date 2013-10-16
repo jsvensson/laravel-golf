@@ -25,7 +25,9 @@
 	},
 	"scripts": {
 		"post-install-cmd": [
+		  "php artisan asset:publish patricktalmadge/bootstrapper",
 			"php artisan debugbar:publish",
+			"php artisan basset:build",
 			"php artisan optimize"
 		],
 		"pre-update-cmd": [
