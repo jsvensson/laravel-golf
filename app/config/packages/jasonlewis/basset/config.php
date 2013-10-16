@@ -37,6 +37,7 @@ return array(
             {
                 $collection->requireDirectory('less')->apply('Less');
                 $collection->requireDirectory('sass')->apply('Sass');
+                $collection->requireDirectory('scss')->apply('Scss');
                 $collection->requireDirectory();
             });
 
