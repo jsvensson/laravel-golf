@@ -199,7 +199,7 @@ return array(
                 $filter->whenAssetIs('.*\.sass')->findMissingConstructorArgs();
             }),
 
-            'Scss' => array('Sass\ScssFilter', function($filter)
+            'Scss' => array('Sass\ScssphpFilter', function($filter)
             {
                 $filter->whenAssetIs('.*\.scss')->findMissingConstructorArgs();
             }),
