@@ -33,7 +33,7 @@
 		"post-update-cmd": [
 		  "php artisan asset:publish patricktalmadge/bootstrapper",
 			"php artisan debugbar:publish",
-			"php artisan basset:build"
+			"php artisan basset:build",
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [
