@@ -25,7 +25,7 @@ return array(
     | You can overwrite this collection or remove it by publishing the config.
     |
     */
-    
+
     'collections' => array(
 
         'application' => function($collection)
@@ -35,8 +35,6 @@ return array(
             // collection will contain valid CSS.
             $directory = $collection->directory('assets/stylesheets', function($collection)
             {
-                $collection->requireDirectory('less')->apply('Less');
-                $collection->requireDirectory('sass')->apply('Sass');
                 $collection->requireDirectory('scss')->apply('Scss');
                 $collection->requireDirectory();
             });
