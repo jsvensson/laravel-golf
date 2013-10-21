@@ -24,14 +24,16 @@
   </ul>
 @endif
 
-  <table class="table table-condensed table-striped table-hover">
-    <tr>
-      <th></th>
-    @foreach($contest->events as $event)
-      <th>{{ $event->name }}</th>
-    @endforeach
-      <th>Summa</th>
-    </tr>
+  <table class="table table-condensed table-striped table-bordered table-hover">
+    <thead>
+      <tr>
+        <th>Spelare</th>
+      @foreach($contest->events as $event)
+        <th>{{ $event->name }}</th>
+      @endforeach
+        <th>Summa</th>
+      </tr>
+    </thead>
     @foreach($contest->players as $player)
     <tr>
       <td class="contest contest-player">{{ $player->initial_name }}</td>
