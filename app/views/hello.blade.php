@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="hero-unit">
+<div class="jumbotron">
   <h1>Golf</h1>
   <p>Svinga en klubba, träffa dina vänner!</p>
 </div>
