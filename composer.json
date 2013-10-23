@@ -36,7 +36,7 @@
 		  "php artisan asset:publish patricktalmadge/bootstrapper",
 			"php artisan debugbar:publish",
 			"php artisan optimize",
-			"echo 'Removing asset builds' && rm -rf public/builds/*"
+			"echo 'Clearing built assets' && rm -rf public/builds/*"
 		],
 		"post-create-project-cmd": [
 			"php artisan key:generate"
