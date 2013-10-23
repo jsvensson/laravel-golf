@@ -8,7 +8,7 @@
 </div>
 
 <div class="row">
-  <div class="span4">
+  <div class="col-md-4">
     @if( ! empty($user))
       <p>Inloggad som {{ $user->full_name }}</p>
     @endif
@@ -24,9 +24,9 @@
       </ul>
   </div>
 
-  <div class="span4"><h4>Senaste aktiviteter</h4></div>
+  <div class="col-md-4"><h4>Senaste aktiviteter</h4></div>
 
-  <div class="span4">
+  <div class="col-md-4">
     <h4>Statistik</h4>
     <ul>
       <li>Users: {{ $count['users'] }}</li>
