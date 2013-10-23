@@ -7,10 +7,6 @@
   <p>Svinga en klubba, träffa dina vänner!</p>
 </div>
 
-@if(Session::has('flash_notice'))
-  <div class="flash-notice">{{ Session::get('flash_notice') }}</div>
-@endif
-
 <div class="row">
   <div class="span4">
     @if( ! empty($user))
