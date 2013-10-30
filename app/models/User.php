@@ -141,7 +141,7 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
   {
     $initial = substr($this->last_name, 0, 1);
     $initial_name = trim("{$this->first_name} {$initial}");
-    return trim($initial_name);
+    return $initial_name;
   }
 
   public function permissions()
