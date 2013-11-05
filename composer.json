@@ -2,7 +2,6 @@
 	"name": "jsvensson/golf",
 	"description": "Playing around with Laravel 4",
 	"require": {
-		"raveren/kint": "dev-master",
 		"laravel/framework": "4.0.*@dev",
 		"cartalyst/sentry": "2.0.*",
 		"fideloper/proxy": "dev-master",
