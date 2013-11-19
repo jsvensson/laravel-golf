@@ -27,7 +27,10 @@ $app->redirectIfTrailingSlash();
 */
 
 $env = $app->detectEnvironment([
-  'dev'        => ['localhost'],
+  'dev'        => [
+                    'localhost',
+                    'Cortana.local',
+                  ],
   'production' => ['*.gopagoda.com']
 ]);
 
