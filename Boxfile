@@ -22,10 +22,10 @@ web1:
     - "php artisan key:generate"
   after_deploy:
     - "php artisan cache:clear"
+    - "php artisan assets:clean"
     - "rm -f app/storage/cache/*"
     - "rm -f app/storage/views/*"
   before_deploy:
     - "php artisan migrate"
-    - "php artisan basset:build --production"
 cache1:
   type: redis
