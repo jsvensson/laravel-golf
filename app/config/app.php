@@ -117,7 +117,7 @@ return array(
 		'Barryvdh\Debugbar\ServiceProvider',
  		'DaveJamesMiller\Breadcrumbs\ServiceProvider',
 		'Fideloper\Proxy\ProxyServiceProvider',
-		'Bootstrapper\BootstrapperServiceProvider',
+		'Codesleeve\AssetPipeline\AssetPipelineServiceProvider',
   ),
 
 	/*
