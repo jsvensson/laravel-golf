@@ -142,6 +142,6 @@ return array(
 	| set to 'production' but false otherwise
 	|
 	*/
-	'concat' => null
+	'concat' => false
 
 );
