@@ -11,7 +11,6 @@ class ContestController extends BaseController
   public function index()
   {
     $contests = Contest::available()->get();
-
     return View::make('contest.index')
       ->with('contests', $contests);
   }
@@ -44,7 +43,6 @@ class ContestController extends BaseController
     else {
       // Attach and activate owner
       $contest->players()->attach(User::currentId(), ['is_active' => true]);
-
       return Redirect::route('contest.show', $contest->id);
     }
   }
@@ -53,7 +51,6 @@ class ContestController extends BaseController
   {
     $contest = Contest::findOrFail($contest_id);
     $is_owner = ($contest->owner_id == User::currentId());
-
     return View::make('contest.show')
       ->with('is_owner', $is_owner)
       ->with('contest', $contest);
@@ -70,7 +67,6 @@ class ContestController extends BaseController
   {
     $contest = Contest::findOrFail($contest_id);
     $contest->update(Input::all());
-
     return Redirect::route('contest.show', $contest->id);
   }
 
