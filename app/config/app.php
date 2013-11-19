@@ -117,7 +117,6 @@ return array(
 		'Barryvdh\Debugbar\ServiceProvider',
  		'DaveJamesMiller\Breadcrumbs\ServiceProvider',
 		'Fideloper\Proxy\ProxyServiceProvider',
-		'Basset\BassetServiceProvider',
 		'Bootstrapper\BootstrapperServiceProvider',
   ),
 
@@ -150,7 +149,6 @@ return array(
 		'App'             => 'Illuminate\Support\Facades\App',
 		'Artisan'         => 'Illuminate\Support\Facades\Artisan',
 		'Auth'            => 'Illuminate\Support\Facades\Auth',
-		'Basset'          => 'Basset\Facade',
 		'Blade'           => 'Illuminate\Support\Facades\Blade',
 		'Breadcrumbs'     => 'DaveJamesMiller\Breadcrumbs\Facade',
 		'Cache'           => 'Illuminate\Support\Facades\Cache',
