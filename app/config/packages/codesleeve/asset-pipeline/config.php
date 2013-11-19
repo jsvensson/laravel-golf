@@ -69,16 +69,16 @@ return array(
 			new Codesleeve\AssetPipeline\Filters\CssRewrite,
 			new Codesleeve\AssetPipeline\Filters\MinifyCSS('production')
 		),
-		'.js.coffee' => array(
+		'.coffee' => array(
 			new Codesleeve\AssetPipeline\Filters\CoffeeScriptFilter,
 			new Codesleeve\AssetPipeline\Filters\MinifyJS('production')
 		),
-		'.css.less' => array(
+		'.less' => array(
 			new Assetic\Filter\LessphpFilter,
 			new Codesleeve\AssetPipeline\Filters\CssRewrite,
 			new Codesleeve\AssetPipeline\Filters\MinifyCSS('production')
 		),
-		'.css.scss' => array(
+		'.scss' => array(
 			new Assetic\Filter\ScssphpFilter,
 			new Codesleeve\AssetPipeline\Filters\CssRewrite,
 			new Codesleeve\AssetPipeline\Filters\MinifyCSS('production')
