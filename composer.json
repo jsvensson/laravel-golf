@@ -8,7 +8,8 @@
 		"davejamesmiller/laravel-breadcrumbs": "2.0.*",
 		"anahkiasen/former": "dev-master",
 		"patricktalmadge/bootstrapper": "dev-develop",
-		"leafo/scssphp": "dev-master",
+		"codesleeve/asset-pipeline": "dev-master",
+		"leafo/scssphp": "dev-master as v0.0.7",
 		"barryvdh/laravel-debugbar": "dev-master"
 	},
 	"autoload": {
