@@ -67,7 +67,7 @@ return array(
 		),
 		'.css' => array(
 			new Codesleeve\AssetPipeline\Filters\CssRewrite,
-			// new Codesleeve\AssetPipeline\Filters\MinifyCSS('production)
+			new Codesleeve\AssetPipeline\Filters\MinifyCSS('production')
 		),
 		'.coffee' => array(
 			new Codesleeve\AssetPipeline\Filters\CoffeeScriptFilter,
@@ -81,7 +81,7 @@ return array(
 		'.scss' => array(
 			new Assetic\Filter\ScssphpFilter,
 			new Codesleeve\AssetPipeline\Filters\CssRewrite,
-			// new Codesleeve\AssetPipeline\Filters\MinifyCSS('production')
+			new Codesleeve\AssetPipeline\Filters\MinifyCSS('production')
 		),
 		'.html' => array(
 			new Codesleeve\AssetPipeline\Filters\JSTFilter,
