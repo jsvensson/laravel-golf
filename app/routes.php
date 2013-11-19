@@ -36,6 +36,12 @@
   Route::resource('contest.player', 'ContestPlayerController', ['only' => ['index', 'show', 'create', 'edit', 'update', 'store']]);
   Route::resource('contest.event', 'ContestEventController');
 
+  /*
+   * Test controller
+   */
+  Route::controller('test', 'TestController');
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
