@@ -32,7 +32,6 @@
 		"post-update-cmd": [
 			"php artisan debugbar:publish",
 			"php artisan optimize",
-			"echo 'Clearing built assets' && rm -rf public/builds/*"
 		],
 		"post-create-project-cmd": [
 			"php artisan key:generate"
