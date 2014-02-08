@@ -7,8 +7,7 @@
 		"fideloper/proxy": "dev-master",
 		"davejamesmiller/laravel-breadcrumbs": "2.0.*",
 		"anahkiasen/former": "dev-master",
-		"codesleeve/asset-pipeline": "dev-master",
-		"leafo/scssphp": "dev-master as v0.0.7",
+		"codesleeve/asset-pipeline": "v1.5",
 		"barryvdh/laravel-debugbar": "dev-master"
 	},
 	"autoload": {
