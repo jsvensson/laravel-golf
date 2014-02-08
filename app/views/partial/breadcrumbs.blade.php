@@ -7,7 +7,7 @@
           <span class="divider">&rArr;</span>
         </li>
       @else
-        <li class="active">{{{ $breadcrumb->title }}</li>
+        <li class="active">{{{ $breadcrumb->title }}}</li>
       @endif
     @endforeach
   </ul>
