@@ -75,7 +75,7 @@ class Contest extends Eloquent
     // Check when logged in
     if($user) {
       $query->orWhere('owner_id', $user->id);
-      if(static::count() >= 1) {
+      if(Contest::count() >= 1) {
         $query->orWhereIn('id', $user->contests()->lists('contest_id'));
       }
     }
