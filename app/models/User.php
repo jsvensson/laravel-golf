@@ -14,17 +14,13 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
   protected $fillable = [];
 
 	/**
-	 * The attributes excluded from the model's JSON form.
+	 * The attributes visible in the model's JSON form.
 	 *
 	 * @var array
 	 */
-	protected $hidden = [
-    'password', 'email',
-    'persist_code',
-    'created_at', 'updated_at',
-    'permissions',
-    'activated', 'activated_at', 'activation_code',
-    'reset_password_code', 'last_login',
+	protected $visible = [
+    'id',
+    'first_name', 'last_name',
   ];
 
   /**
