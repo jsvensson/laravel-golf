@@ -64,7 +64,6 @@ class ContestHtmlController extends ContestBaseController
   public function update($contest_id)
   {
     $contest = parent::update($contest_id);
-    $contest->update(Input::all());
     return Redirect::route('contest.show', $contest->id);
   }
 
