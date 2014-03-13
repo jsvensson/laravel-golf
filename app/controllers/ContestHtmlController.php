@@ -1,6 +1,6 @@
 <?php
 
-class ContestController extends BaseController
+class ContestHtmlController extends ContestBaseController
 {
 
   /**
@@ -10,7 +10,7 @@ class ContestController extends BaseController
    */
   public function index()
   {
-    $contests = Contest::available()->get();
+    $contests = parent::index();
     return View::make('contest.index')
       ->with('contests', $contests);
   }
@@ -32,7 +32,7 @@ class ContestController extends BaseController
    */
   public function store()
   {
-    $contest = new Contest(Input::all());
+    $contest = parent::store();
 
     // Validation
     if ( ! $contest->save()) {
@@ -41,15 +41,13 @@ class ContestController extends BaseController
         ->withErrors($contest->getValidatorMessages());
     }
     else {
-      // Attach and activate owner
-      $contest->players()->attach(User::currentId(), ['is_active' => true]);
       return Redirect::route('contest.show', $contest->id);
     }
   }
 
   public function show($contest_id)
   {
-    $contest = Contest::findOrFail($contest_id);
+    $contest = parent::show($contest_id);
     $is_owner = ($contest->owner_id == User::currentId());
     return View::make('contest.show')
       ->with('is_owner', $is_owner)
@@ -58,14 +56,14 @@ class ContestController extends BaseController
 
   public function edit($contest_id)
   {
-    $contest = Contest::findOrFail($contest_id);
+    $contest = parent::edit($contest_id);
     return View::make('contest.edit')
       ->with('contest', $contest);
   }
 
   public function update($contest_id)
   {
-    $contest = Contest::findOrFail($contest_id);
+    $contest = parent::update($contest_id);
     $contest->update(Input::all());
     return Redirect::route('contest.show', $contest->id);
   }

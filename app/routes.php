@@ -32,7 +32,7 @@
   /*
    * Contest controller (resource)
    */
-  Route::resource('contest', 'ContestController');
+  Route::resource('contest', 'ContestHtmlController');
   Route::resource('contest.player', 'ContestPlayerController', ['only' => ['index', 'show', 'create', 'edit', 'update', 'store']]);
   Route::resource('contest.event', 'ContestEventController');
 
