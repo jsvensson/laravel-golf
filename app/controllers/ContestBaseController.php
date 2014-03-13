@@ -49,6 +49,7 @@ class ContestBaseController extends BaseController
   public function show($contest_id)
   {
     $contest = Contest::findOrFail($contest_id);
+    $contest->load('players', 'events');
     return $contest;
   }
 
