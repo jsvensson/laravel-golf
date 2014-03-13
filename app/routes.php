@@ -37,6 +37,13 @@
   Route::resource('contest.event', 'ContestEventController');
 
   /*
+   * API routing
+   */
+  Route::group(['prefix' => 'api/v1'], function() {
+    Route::resource('contest', 'ContestApiController');
+  });
+
+  /*
    * Test controller
    */
   Route::controller('test', 'TestController');
