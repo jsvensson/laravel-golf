@@ -18,7 +18,14 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
 	 *
 	 * @var array
 	 */
-	protected $hidden = array('password');
+	protected $hidden = [
+    'password', 'email',
+    'persist_code',
+    'created_at', 'updated_at',
+    'permissions',
+    'activated', 'activated_at', 'activation_code',
+    'reset_password_code', 'last_login',
+  ];
 
   /**
    * Entity relationships for the model.

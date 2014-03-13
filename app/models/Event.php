@@ -14,6 +14,16 @@ class ContestEvent extends Eloquent
   protected $fillable = ['contest_id', 'name', 'date'];
 
   /**
+   * The attributes excluded from the model's JSON form.
+   *
+   * @var array
+   */
+  protected $hidden = [
+    'created_at', 'updated_at',
+    'contest_id',
+  ];
+
+  /**
    * Contest relationship for the model. An Event belongs to a Contest.
    *
    * @return object
