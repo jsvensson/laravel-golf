@@ -6,8 +6,6 @@
 
   <h2>Redigera tävling</h2>
 
-<pre>{{ $contest }}</pre>
-
   {{ Former::horizontal_open()
       ->action(URL::route('contest.update', $contest->id))
       ->method('put') }}
