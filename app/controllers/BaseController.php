@@ -1,8 +1,15 @@
 <?php
 
+use League\Fractal;
+
 class BaseController extends Controller {
 
   protected $layout = 'layout.default';
+
+  public function __construct()
+  {
+    $this->fractal = new Fractal\Manager();
+  }
 
 	/**
 	 * Setup the layout used by the controller.
