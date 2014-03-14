@@ -1,5 +1,7 @@
 <?php
 
+use League\Fractal;
+
 class ContestApiController extends ContestBaseController
 {
 
@@ -38,7 +40,9 @@ class ContestApiController extends ContestBaseController
   public function show($contest_id)
   {
     $contest = parent::show($contest_id);
-    return $contest;
+    $resource = new Fractal\Resource\Item($contest, new ContestTransformer);
+
+    return Response::json($this->fractal->createData($resource)->toArray());
   }
 
   public function edit($contest_id)
