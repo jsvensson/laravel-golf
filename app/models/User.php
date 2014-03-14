@@ -24,6 +24,15 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
   ];
 
   /**
+   * The attributes appended to the model's JSON form.
+   *
+   * @var array
+   */
+  protected $appends = [
+   'initial_name'
+  ];
+
+  /**
    * Entity relationships for the model.
    *
    * @return object

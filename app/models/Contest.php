@@ -17,6 +17,10 @@ class Contest extends Eloquent
    */
   protected $fillable = ['owner_id', 'name', 'start_date', 'end_date'];
 
+  protected $hidden = [
+    'created_at', 'updated_at',
+  ];
+
   public static function boot()
   {
     static::creating(function($contest) {
