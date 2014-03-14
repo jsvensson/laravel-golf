@@ -39,7 +39,7 @@
   /*
    * API routing
    */
-  Route::group(['prefix' => 'api/v1'], function() {
+  Route::group(['prefix' => 'api/v0'], function() {
     Route::resource('contest', 'ContestApiController');
   });
 
