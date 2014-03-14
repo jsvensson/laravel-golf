@@ -8,6 +8,7 @@
 		"davejamesmiller/laravel-breadcrumbs": "2.0.*",
 		"anahkiasen/former": "dev-master",
 		"codesleeve/asset-pipeline": "v1.5",
+		"league/fractal": "0.7.*",
 		"barryvdh/laravel-debugbar": "dev-master"
 	},
 	"autoload": {
