@@ -13,7 +13,8 @@ class ContestApiController extends ContestBaseController
   public function index()
   {
     $contests = parent::index();
-    return $contests;
+    $resource = new Fractal\Resource\Collection($contests, new ContestTransformer);
+    return Response::json($this->toJsonArray($resource));
   }
 
   /**
