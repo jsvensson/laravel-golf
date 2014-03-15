@@ -6,11 +6,6 @@ class BaseController extends Controller {
 
   protected $layout = 'layout.default';
 
-  public function __construct()
-  {
-    $this->fractal = new Fractal\Manager();
-  }
-
 	/**
 	 * Setup the layout used by the controller.
 	 *
@@ -22,6 +17,12 @@ class BaseController extends Controller {
 		{
 			$this->layout = View::make($this->layout);
 		}
+	}
+
+	protected function toJsonArray($resource)
+	{
+		$fractal = new Fractal\Manager();
+		return $fractal->createData($resource)->toArray();
 	}
 
 }

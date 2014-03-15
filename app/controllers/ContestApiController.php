@@ -41,8 +41,7 @@ class ContestApiController extends ContestBaseController
   {
     $contest = parent::show($contest_id);
     $resource = new Fractal\Resource\Item($contest, new ContestTransformer);
-
-    return Response::json($this->fractal->createData($resource)->toArray());
+    return Response::json($this->toJsonArray($resource));
   }
 
   public function edit($contest_id)
