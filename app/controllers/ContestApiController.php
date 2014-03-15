@@ -44,12 +44,6 @@ class ContestApiController extends ContestBaseController
     return Response::json($this->toJsonArray($resource));
   }
 
-  public function edit($contest_id)
-  {
-    $contest = parent::edit($contest_id);
-    return $contest;
-  }
-
   public function update($contest_id)
   {
     $contest = parent::update($contest_id);
