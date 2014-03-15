@@ -21,6 +21,7 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
 	protected $visible = [
     'id',
     'first_name', 'last_name',
+    'pivot',
   ];
 
   /**
