@@ -14,7 +14,8 @@ class ContestApiController extends ContestBaseController
   {
     $contests = parent::index();
     $resource = new Fractal\Resource\Collection($contests, new ContestTransformer);
-    return Response::json($this->toJsonArray($resource));
+    return Response::json($this->toJsonArray($resource))
+      ->setCallback(Input::get('callback'));
   }
 
   /**
@@ -42,14 +43,16 @@ class ContestApiController extends ContestBaseController
   {
     $contest = parent::show($contest_id);
     $resource = new Fractal\Resource\Item($contest, new ContestTransformer);
-    return Response::json($this->toJsonArray($resource));
+    return Response::json($this->toJsonArray($resource))
+      ->setCallback(Input::get('callback'));
   }
 
   public function update($contest_id)
   {
     $contest = parent::update($contest_id);
     $resource = new Fractal\Resource\Item($contest, new ContestTransformer);
-    return Response::json($this->toJsonArray($resource));
+    return Response::json($this->toJsonArray($resource))
+    ->setCallback(Input::get('callback'));
   }
 
 }
