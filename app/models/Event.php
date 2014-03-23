@@ -56,6 +56,21 @@ class ContestEvent extends Eloquent
     });
   }
 
+  public function getScoreAttribute()
+  {
+    $score = $this->pivot->score;
+    return empty($score) ? null : $score;
+  }
+
+  public function setScoreAttribute($value)
+  {
+    if (empty($value)) {
+      $value = null;
+    }
+
+    $this->pivot->score = $value;
+  }
+
 }
 
 /* EOF */
