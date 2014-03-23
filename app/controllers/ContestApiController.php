@@ -1,6 +1,6 @@
 <?php
 
-use League\Fractal;
+use League\Fractal\Resource;
 
 class ContestApiController extends ContestBaseController
 {
@@ -13,7 +13,7 @@ class ContestApiController extends ContestBaseController
   public function index()
   {
     $contests = parent::index();
-    $resource = new Fractal\Resource\Collection($contests, new ContestTransformer);
+    $resource = new Resource\Collection($contests, new ContestTransformer);
     return Response::json($this->toJsonArray($resource))
       ->setCallback(Input::get('callback'));
   }
@@ -42,7 +42,7 @@ class ContestApiController extends ContestBaseController
   public function show($contest_id)
   {
     $contest = parent::show($contest_id);
-    $resource = new Fractal\Resource\Item($contest, new ContestTransformer);
+    $resource = new Resource\Item($contest, new ContestTransformer);
     return Response::json($this->toJsonArray($resource))
       ->setCallback(Input::get('callback'));
   }
@@ -50,7 +50,7 @@ class ContestApiController extends ContestBaseController
   public function update($contest_id)
   {
     $contest = parent::update($contest_id);
-    $resource = new Fractal\Resource\Item($contest, new ContestTransformer);
+    $resource = new Resource\Item($contest, new ContestTransformer);
     return Response::json($this->toJsonArray($resource))
     ->setCallback(Input::get('callback'));
   }
