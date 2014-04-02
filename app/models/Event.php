@@ -62,6 +62,14 @@ class ContestEvent extends Eloquent
     static::created(function($event) {
       foreach($event->contest->players as $player) {
         $event->players()->attach($player->id);
+
+        // Create Result for each player
+        $result = new Result([
+          'user_id'    => $player->id,
+          'contest_id' => $event->contest->id,
+          'event_id'   => $event->id,
+        ]);
+        $result->save();
       }
     });
   }
