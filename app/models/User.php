@@ -53,6 +53,10 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
   {
     return $this->belongsToMany('ContestEvent', 'events_players');
   }
+
+  public function results()
+  {
+    return $this->hasMany('Result');
   }
 
   public function eventsForContest($contest_id)

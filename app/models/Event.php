@@ -44,6 +44,16 @@ class ContestEvent extends Eloquent
       ->withPivot('score');
   }
 
+  /**
+   * Result relationship for the model. An Event has many Results.
+   *
+   * @return object
+   */
+  public function results()
+  {
+    return $this->hasMany('Result');
+  }
+
   public static function boot()
   {
     parent::boot();
