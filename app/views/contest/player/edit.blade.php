@@ -16,8 +16,8 @@
         @endforeach
       </tr>
       <tr>
-    @foreach($player->eventsForContest($contest->id)->get() as $event)
-      <td><input type="number" name="events[{{ $event->id }}][score]" value="{{ $event->score }}"></td>
+    @foreach($results as $result)
+      <td><input type="number" name="result[{{ $result->id }}][score]" value="{{ $result->score }}"></td>
     @endforeach
       </tr>
     </table>

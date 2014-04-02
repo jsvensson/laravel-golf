@@ -37,8 +37,12 @@
     @foreach($contest->players as $player)
     <tr>
       <td class="contest contest-player">{{ $player->initial_name }}</td>
-      @foreach($player->eventsForContest($contest->id)->get() as $event)
-        <td class="contest contest-score">{{ !empty($event->score) ? $event->score : '<span class="contest contest-noscore">&mdash;</span>' }}</td>
+      @foreach($player->results()->forContest($contest)->get() as $result)
+        @if($result->score)
+          <td class="contest contest-score">{{ $result->score }}</td>
+        @else
+          <td class="contest contest-noscore">&mdash;</td>
+        @endif
       @endforeach
       <td class="contest contest-score-total">{{ $player->scoreForContest($contest->id) }}</td>
     </tr>
