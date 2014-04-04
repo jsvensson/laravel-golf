@@ -1,6 +1,6 @@
 <?php
 
-class ContestEvent extends Eloquent
+class Course extends Eloquent
 {
 
   protected $table = 'events';
@@ -40,8 +40,7 @@ class ContestEvent extends Eloquent
    */
   public function players()
   {
-    return $this->belongsToMany('User', 'events_players')
-      ->withPivot('score');
+    return $this->belongsToMany('User');
   }
 
   /**

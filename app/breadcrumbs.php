@@ -51,9 +51,9 @@ Breadcrumbs::register('contest.event.index', function($b, $contest) {
 });
 
 // contest.event.show breadcrumb
-Breadcrumbs::register('contest.event.show', function($b, $event) {
-  $b->parent('contest.event.index', $event->contest);
-  $b->push($event->name, route('contest.event.show', [$event->contest->id, $event->id]));
+Breadcrumbs::register('contest.event.show', function($b, $course) {
+  $b->parent('contest.event.index', $course->contest);
+  $b->push($course->name, route('contest.event.show', [$course->contest->id, $course->id]));
 });
 
 // contest.event.create breadcrumb

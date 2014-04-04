@@ -33,15 +33,15 @@ class ContestPlayerController extends BaseController {
     foreach(Input::get('users') as $player_id) {
       $contest->players()->attach($player_id, ['is_active' => true]);
 
-      // Attach all contest events to player
-      foreach($contest->events as $event) {
-        $event->players()->attach($player_id);
+      // Attach all contest courses to player
+      foreach($contest->courses as $course) {
+        $course->players()->attach($player_id);
 
         // Create Result for each new event for the players
         $result = new Result([
           'user_id'    => $player_id,
-          'contest_id' => $event->contest->id,
-          'event_id'   => $event->id,
+          'contest_id' => $course->contest->id,
+          'event_id'   => $course->id,
         ]);
         $result->save();
       }
@@ -59,12 +59,12 @@ class ContestPlayerController extends BaseController {
   {
     $contest = Contest::findOrFail($contest_id);
     $player  = User::findOrFail($player_id);
-    $events  = $player->eventsForContest($contest->id)->get();
+    $courses = Course::forContest($contest)->get();
     $results = Result::forPlayer($player)->forContest($contest)->get();
 
     return View::make('contest.player.edit')
       ->with('contest', $contest)
-      ->with('events', $events)
+      ->with('courses', $courses)
       ->with('player', $player)
       ->with('results', $results);
   }

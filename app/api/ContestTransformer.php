@@ -30,7 +30,7 @@ class ContestTransformer extends Fractal\TransformerAbstract
     }
 
     // Massage events into proper format
-    foreach($contest->events->toArray() as $e) {
+    foreach($contest->courses->toArray() as $e) {
       // Basic event info
       $event = [
         'id'      => (int) $e['id'],

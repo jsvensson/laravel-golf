@@ -1,6 +1,6 @@
 <?php
 
-class ContestEventController extends BaseController
+class CourseController extends BaseController
 {
 
   public function index($contest_id)
@@ -12,7 +12,7 @@ class ContestEventController extends BaseController
 
   public function show($contest_id, $event_id)
   {
-    $event = ContestEvent::findOrFail($event_id);
+    $event = Course::findOrFail($event_id);
     return View::make('contest.event.show')
       ->with('event', $event);
   }
@@ -28,7 +28,7 @@ class ContestEventController extends BaseController
   {
     $contest = Contest::findOrFail($contest_id);
 
-    $event = new ContestEvent([
+    $event = new Course([
       'contest_id' => $contest->id,
       'name' => Input::get('name'),
       'date' => Input::get('date')
