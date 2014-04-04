@@ -8,7 +8,7 @@
       ->action(URL::route('contest.player.update', [$contest->id, $player->id]))
       ->method('put') }}
 
-  @if($player->events()->count() > 0)
+  @if($player->courses()->count() > 0)
     <table>
       <tr>
         @foreach($player->eventsForContest($contest->id)->get() as $event)
