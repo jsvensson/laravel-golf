@@ -65,13 +65,6 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
       ->where('contest_id', $contest_id);
   }
 
-  public function scoreForContest($contest_id)
-  {
-    return $this->events()
-            ->where('contest_id', $contest_id)
-            ->sum('score');
-  }
-
   public static function register($u, $activate = false)
   {
     Log::info('Creating user ' . $u['email'] . ", activate = " . ($activate ? 'true' : 'false'));
