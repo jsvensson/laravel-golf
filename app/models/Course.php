@@ -73,6 +73,11 @@ class Course extends Eloquent
     });
   }
 
+  public function scopeForContest($query, Contest $contest)
+  {
+    return $query->where('contest_id', $contest->id);
+  }
+
 }
 
 /* EOF */
