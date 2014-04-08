@@ -34,7 +34,7 @@ class Tee extends Eloquent
   }
 
   /**
-   * Player relationship for the model. An Event has many Players.
+   * Player relationship for the model. An Event belongs to many Players.
    *
    * @return object
    */

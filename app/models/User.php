@@ -49,9 +49,14 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
       ->withPivot('is_active');
   }
 
+  /**
+   * Tee relationship for the model. A Player belongs to many Tees.
+   *
+   * @return object
+   */
   public function tees()
   {
-    return $this->hasMany('Tee');
+    return $this->belongsToMany('Tee');
   }
 
   public function results()
