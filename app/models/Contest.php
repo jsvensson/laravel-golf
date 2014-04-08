@@ -38,9 +38,9 @@ class Contest extends Eloquent
    *
    * @return object
    */
-  public function courses()
+  public function tees()
   {
-    return $this->hasMany('Course');
+    return $this->hasMany('Tee');
   }
 
   /**
@@ -74,7 +74,7 @@ class Contest extends Eloquent
     $user = User::getUser();
 
     $query->where('is_public', true)
-      ->with('owner', 'courses', 'players');
+      ->with('owner', 'tees', 'players');
 
     // Check when logged in
     if($user) {

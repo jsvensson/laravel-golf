@@ -47,9 +47,9 @@ class Result extends Eloquent
    *
    * @return object
    */
-  public function course()
+  public function tee()
   {
-    return $this->belongsTo('Course');
+    return $this->belongsTo('Tee');
   }
 
   public function scopeForContest($query, Contest $contest)

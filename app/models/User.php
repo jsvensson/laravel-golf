@@ -49,9 +49,9 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
       ->withPivot('is_active');
   }
 
-  public function courses()
+  public function tees()
   {
-    return $this->belongsToMany('Course');
+    return $this->hasMany('Tee');
   }
 
   public function results()
@@ -59,9 +59,9 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
     return $this->hasMany('Result');
   }
 
-  public function coursesForContest($contest_id)
+  public function teesForContest($contest_id)
   {
-    return $this->courses()
+    return $this->tees()
       ->where('contest_id', $contest_id);
   }
 

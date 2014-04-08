@@ -1,6 +1,6 @@
 <?php
 
-class Course extends Eloquent
+class Tee extends Eloquent
 {
 
   protected $table = 'events';

@@ -34,7 +34,7 @@
    */
   Route::resource('contest', 'ContestHtmlController');
   Route::resource('contest.player', 'ContestPlayerController', ['only' => ['index', 'show', 'create', 'edit', 'update', 'store']]);
-  Route::resource('contest.event', 'CourseController');
+  Route::resource('contest.event', 'TeeController');
 
   /*
    * API routing

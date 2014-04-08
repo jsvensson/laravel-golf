@@ -9,7 +9,7 @@
   <ul>
     <li>Skapare: <a href="{{ route('contest.player.show', [$contest->id, $contest->owner->id]) }}">{{ $contest->owner->full_name }}</a></li>
     <li><a href="{{ route('contest.player.index', $contest->id) }}">Visa {{ $contest->players->count() }} deltagare</a></li>
-    <li><a href="{{ URL::route('contest.event.index', $contest->id) }}">Visa {{ $contest->courses->count() }} events</a></li>
+    <li><a href="{{ URL::route('contest.event.index', $contest->id) }}">Visa {{ $contest->tees->count() }} events</a></li>
 @if($user)
     <li><a href="{{ route('contest.player.edit', [$contest->id, $user->id]) }}">Redigera mina events</a></li>
 @endif
@@ -28,8 +28,8 @@
     <thead>
       <tr>
         <th>Spelare</th>
-      @foreach($contest->courses as $course)
-        <th>{{ $course->name }}</th>
+      @foreach($contest->tees as $tee)
+        <th>{{ $tee->name }}</th>
       @endforeach
         <th>Summa</th>
       </tr>
