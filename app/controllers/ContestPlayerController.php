@@ -31,11 +31,12 @@ class ContestPlayerController extends BaseController {
 
     // Attach players to contest
     foreach(Input::get('users') as $player_id) {
-      $contest->players()->attach($player_id, ['is_active' => true]);
+      $user = User::findOrFail($player_id);
+      $contest->players()->attach($user->id, ['is_active' => true]);
 
       // Attach all contest tees to player
       foreach($contest->tees as $tee) {
-        $tee->players()->attach($player_id);
+        $tee->attachPlayer($user);
 
         // Create Result for each new event for the players
         $result = new Result([

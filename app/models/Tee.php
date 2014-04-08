@@ -60,7 +60,7 @@ class Tee extends Eloquent
     // Attach all contest players to a created event
     static::created(function($event) {
       foreach($event->contest->players as $player) {
-        $event->players()->attach($player->id);
+        $event->attachPlayer($player);
 
         // Create Result for each player
         $result = new Result([
