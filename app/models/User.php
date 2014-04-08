@@ -43,6 +43,11 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
     return $this->hasOne('Profile');
   }
 
+  /**
+   * Contest relationship for the model. A Player belongs to many Contests.
+   *
+   * @return object
+   */
   public function contests()
   {
     return $this->belongsToMany('Contest', 'contests_players')
