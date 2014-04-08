@@ -78,11 +78,6 @@ class Tee extends Eloquent
     $this->players()->attach($user->id);
   }
 
-  public function scopeForContest($query, Contest $contest)
-  {
-    return $query->where('contest_id', $contest->id);
-  }
-
 }
 
 /* EOF */
