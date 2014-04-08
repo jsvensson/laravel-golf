@@ -11,7 +11,7 @@
   @if($player->tees()->count() > 0)
     <table>
       <tr>
-        @foreach($player->eventsForContest($contest->id)->get() as $event)
+        @foreach($player->teesForContest($contest)->get() as $event)
           <th>{{ $event->name }}</th>
         @endforeach
       </tr>

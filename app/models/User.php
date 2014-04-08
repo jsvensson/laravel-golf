@@ -59,10 +59,10 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
     return $this->hasMany('Result');
   }
 
-  public function teesForContest($contest_id)
+  public function teesForContest($contest)
   {
     return $this->tees()
-      ->where('contest_id', $contest_id);
+      ->where('contest_id', $contest->id);
   }
 
   public static function register($u, $activate = false)
