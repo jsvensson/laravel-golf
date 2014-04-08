@@ -62,6 +62,11 @@ class Result extends Eloquent
     return $query->where('user_id', $player->id);
   }
 
+  public function scopeTotalForContest($query, Contest $contest)
+  {
+    return $query->forContest($contest)->sum('score');
+  }
+
 }
 
 /* EOF */
