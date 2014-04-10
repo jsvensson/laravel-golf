@@ -46,7 +46,7 @@ class ContestTransformer extends Fractal\TransformerAbstract
           'first_name'   => $player['first_name'],
           'last_name'    => $player['last_name'],
           'initial_name' => $player['initial_name'],
-          'score' => (is_null($player['pivot']['score']) ? $player['pivot']['score'] : (int) $player['pivot']['score']),
+          'score'        => (is_null($player['pivot']['score']) ? $player['pivot']['score'] : (int) $player['pivot']['score']),
         ];
       }
 
