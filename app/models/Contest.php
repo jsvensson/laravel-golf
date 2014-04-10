@@ -121,6 +121,12 @@ class Contest extends Eloquent
     return (bool) $value;
   }
 
+  /**
+   * Attach a player to the contest.
+   *
+   * @param User  The user object to attach
+   * @param bool  Flag player as active in the contest
+   */
   public function attachPlayer(User $user, $is_active = false)
   {
     $this->players()->attach($user->id, ['is_active' => $is_active]);
