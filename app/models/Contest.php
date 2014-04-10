@@ -121,6 +121,12 @@ class Contest extends Eloquent
     return (bool) $value;
   }
 
+  public function attachPlayer(User $user, $is_active = false)
+  {
+    $this->players()->attach($user->id, ['is_active' => $is_active]);
+
+  }
+
 }
 
 
