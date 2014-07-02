@@ -44,7 +44,7 @@
           <td class="contest contest-noscore">&mdash;</td>
         @endif
       @endforeach
-      <td class="contest contest-result">{{ $player->results()->totalForContest($contest) }}</td>
+      <td class="contest contest-result">{{ $player->results()->forContest($contest)->sum('score') }}</td>
     </tr>
     @endforeach
   </table>
