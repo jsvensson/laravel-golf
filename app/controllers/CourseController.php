@@ -30,8 +30,8 @@ class TeeController extends BaseController
 
     $tee = new Tee([
       'contest_id' => $contest->id,
-      'name' => Input::get('name'),
-      'date' => Input::get('date')
+      'name'       => Input::get('name'),
+      'date'       => Input::get('date')
     ]);
     $tee->save();
     return Redirect::route('contest.event.show', [$contest->id, $tee->id]);
