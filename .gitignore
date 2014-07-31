@@ -6,5 +6,4 @@
 /public/builds
 /public/packages/*
 /vendor
-composer.lock
 composer.phar
