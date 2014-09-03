@@ -75,11 +75,20 @@ class ContestPlayerController extends BaseController {
     $contest = Contest::findOrFail($contest_id);
     $player = User::findOrFail($player_id);
 
-    $scores = Input::get('events');
+    $new_results = Input::get('result');
 
-    $player->events()->sync($scores, false);
+    // Fetch old Results
+    $old_results = $player->results()->where('contest_id', $contest->id)->get();
 
-    return Input::get('events');
+    // Update Results
+    foreach($old_results as $result) {
+      $new = array_shift($new_results);
+      $result->score = $new['score'];
+      $result->save();
+    }
+
+    return Redirect::route('contest.show', $contest->id);
+
   }
 
 }
