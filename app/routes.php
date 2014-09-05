@@ -14,10 +14,12 @@
   Route::controller('auth', 'AuthController');
 
   /*
-   * Authorization required for all 'create' and 'store' routes
+   * Authorization required for all 'create/store/edit' routes
    */
   Route::when('*/create', 'auth');
   Route::when('*/store', 'auth');
+  Route::when('*/edit', 'auth');
+
 
   /*
    * Home controller
