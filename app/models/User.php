@@ -79,10 +79,10 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
   {
     Log::info('Creating user ' . $u['email'] . ", activate = " . ($activate ? 'true' : 'false'));
     $newuser = Sentry::getUserProvider()->create([
-      'email'    => $u['email'],
-      'password' => $u['password'],
+      'email'      => $u['email'],
+      'password'   => $u['password'],
       'first_name' => $u['first_name'],
-      'last_name' => $u['last_name']
+      'last_name'  => $u['last_name']
     ]);
     Log::info('Created user id->' . $newuser->id);
 

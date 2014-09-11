@@ -73,7 +73,7 @@ class ContestPlayerController extends BaseController {
   public function update($contest_id, $player_id)
   {
     $contest = Contest::findOrFail($contest_id);
-    $player = User::findOrFail($player_id);
+    $player  = User::findOrFail($player_id);
 
     $new_results = Input::get('result');
 
