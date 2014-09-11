@@ -83,7 +83,7 @@ class ContestPlayerController extends BaseController {
     // Update Results
     foreach($old_results as $result) {
       $new = array_shift($new_results);
-      $result->score = $new['score'];
+      $result->score = (int) $new['score'];
       $result->save();
     }
 
