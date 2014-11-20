@@ -2,11 +2,12 @@
 	"name": "jsvensson/golf",
 	"description": "Playing around with Laravel 4",
 	"require": {
-		"laravel/framework": "4.0.*@dev",
+		"laravel/framework": "4.1.*",
+		"doctrine/dbal": "~2.3",
 		"cartalyst/sentry": "2.0.*",
 		"fideloper/proxy": "dev-master",
 		"davejamesmiller/laravel-breadcrumbs": "2.0.*",
-		"anahkiasen/former": "dev-master",
+		"anahkiasen/former": "3.4.*",
 		"codesleeve/asset-pipeline": "v1.5",
 		"league/fractal": "0.7.*",
 		"barryvdh/laravel-debugbar": "dev-master"
