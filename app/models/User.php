@@ -169,4 +169,20 @@ class User extends SentryUserModel implements UserInterface, RemindableInterface
     $usr = Sentry::getUserProvider()->findById($this->id);
     return $usr->getMergedPermissions();
   }
+
+  public function getRememberToken()
+  {
+      return $this->remember_token;
+  }
+
+  public function setRememberToken($value)
+  {
+      $this->remember_token = $value;
+  }
+
+  public function getRememberTokenName()
+  {
+      return 'remember_token';
+  }
+
 }
