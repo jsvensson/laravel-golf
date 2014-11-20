@@ -52,10 +52,10 @@ return array(
 			'prefix'   => '',
 		),
 
-		'development' => array(
+		'homestead' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'port'      => '33060',
+			'port'      => '3306',
 			'database'  => 'gatecom_golf',
 			'username'  => 'homestead',
 			'password'  => 'secret',

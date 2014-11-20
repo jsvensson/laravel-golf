@@ -13,8 +13,6 @@
 
 $app = new Illuminate\Foundation\Application;
 
-$app->redirectIfTrailingSlash();
-
 /*
 |--------------------------------------------------------------------------
 | Detect The Application Environment
@@ -29,6 +27,7 @@ $app->redirectIfTrailingSlash();
 $env = $app->detectEnvironment([
   'dev'        => [
                     'localhost',
+                    'homestead',
                     '*.local',
                   ],
   'production' => ['*.gopagoda.com']
