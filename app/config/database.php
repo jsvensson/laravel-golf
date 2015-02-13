@@ -66,10 +66,10 @@ return array(
 
 		'production' => array(
 			'driver'    => 'mysql',
-			'host'      => isset($_SERVER['DB1_HOST']) ? $_SERVER['DB1_HOST'] : 'localhost',
-			'database'  => isset($_SERVER['DB1_NAME']) ? $_SERVER['DB1_NAME'] : 'database',
-			'username'  => isset($_SERVER['DB1_USER']) ? $_SERVER['DB1_USER'] : 'root',
-			'password'  => isset($_SERVER['DB1_PASS']) ? $_SERVER['DB1_PASS'] : '',
+			'host'      => isset($_SERVER['DATABASE1_HOST']) ? $_SERVER['DATABASE1_HOST'] : '',
+			'database'  => isset($_SERVER['DATABASE1_NAME']) ? $_SERVER['DATABASE1_NAME'] : '',
+			'username'  => isset($_SERVER['DATABASE1_USER']) ? $_SERVER['DATABASE1_USER'] : '',
+			'password'  => isset($_SERVER['DATABASE1_PASS']) ? $_SERVER['DATABASE1_PASS'] : '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
@@ -126,8 +126,8 @@ return array(
 		'cluster' => true,
 
 		'default' => array(
-			'host'     => 'tunnel.pagodabox.com',
-			'port'     => 6381,
+			'host'     => $_SERVER['CACHE1_HOST'],
+			'port'     => $_SERVER['CACHE1_PORT'],
 			'database' => 0,
 		),
 
