@@ -12,9 +12,8 @@ web1:
     - mcrypt
     - pdo_mysql
   network_dirs:
-    storage1:
-      - data/app/storage
-      - data/public/builds
+    - app/storage
+    - public/builds
   before_deploy:
     - "php artisan -n migrate"
   after_deploy:
