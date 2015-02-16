@@ -30,7 +30,7 @@ $env = $app->detectEnvironment([
                     'homestead',
                     '*.local',
                   ],
-  'production' => ['*.gopagoda.com']
+  'production' => ['*.gopagoda.io']
 ]);
 
 /*
