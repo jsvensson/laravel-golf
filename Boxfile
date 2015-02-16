@@ -13,13 +13,8 @@ web1:
     - pdo_mysql
   network_dirs:
     storage1:
-      - app/storage
-      - app/storage/cache
-      - app/storage/debugbar
-      - app/storage/logs
-      - app/storage/meta
-      - app/storage/views
-      - public/builds
+      - data/app/storage
+      - data/public/builds
   before_deploy:
     - "php artisan -n migrate"
   after_deploy:
